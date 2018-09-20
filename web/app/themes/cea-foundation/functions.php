@@ -14,7 +14,10 @@
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
-if (get_page_template() != 'single-project.php'):
+
+$cea_post_type = filter_input(INPUT_GET,"post_type",FILTER_SANITIZE_STRING);
+
+if (empty($_GET['et_fb'])):
     /** Various clean up functions */
     require_once( 'library/cleanup.php' );
 

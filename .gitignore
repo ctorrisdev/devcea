@@ -20,4 +20,6 @@ vendor/*
 !vendor/.gitkeep
 
 dev_documents
-
+access.log
+error.log
+   

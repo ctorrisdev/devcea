@@ -14,8 +14,7 @@
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
-
-$cea_post_type = filter_input(INPUT_GET,"post_type",FILTER_SANITIZE_STRING);
+$cea_post_type = filter_input(INPUT_GET, "post_type", FILTER_SANITIZE_STRING);
 
 if (empty($_GET['et_fb'])):
     /** Various clean up functions */
@@ -62,6 +61,5 @@ if (empty($_GET['et_fb'])):
     require_once( 'library/breadcrumbs.php' );
 
     require_once( 'library/custom-cea.php' );
+endif;
 
-
-endif; 

@@ -6,19 +6,20 @@
 <li>
     <a href="#">D&eacute;couvrir</a>
     <ul class="vertical menu">
-          <li><a href="#">Actualit&eacute;s</a></li>
-          <li><a href="#">Archives</a></li>
+          <li><a href="http://bitumas.com/cea/decouvrir/actualites/">actualit&eacute;s</a></li>
+          <li><a href="http://bitumas.com/cea/decouvrir/archives/">archives</a></li>
     </ul>
 </li>
-<li><a href="#">&Eacute;changer</a></li>
-  <li><a href="#">Curater</a></li>
+<li><a href="http://bitumas.com/cea/echanger/">&eacutechanger</a></li>
+  <li><a href="http://bitumas.com/cea/curater-2/">curater</a></li>
 <li>
     <a href="#">S'informer</a>
     <ul class="vertical menu">
-          <li><a href="#">Annuaire</a></li>
-          <li><a href="#">Ressources</a></li>
+          <li><a href="http://bitumas.com/cea/sinformer/annuaire/">annuaire</a></li>
+          <li><a href="http://bitumas.com/cea/sinformer/ressources/">ressources</a></li>
     </ul>
 </li>
-<li><a href="#">Structurer</a></li>
+<li><a href="http://bitumas.com/cea/structurer/">structurer</a></li>
+<li><a href="http://bitumas.com/cea/structurer/">FR / EN</a></li>
 </ul>
 </nav>

@@ -19,7 +19,7 @@
 		the_title( '<h3 class="entry-title">', '</h3>' );
 	}
 	?>
-	<?php
+	<?
 	if ( has_tag('12') ) {
     echo '<img class="badge-tag" src="'.get_template_directory_uri().'/images/std.svg" />';
 } 

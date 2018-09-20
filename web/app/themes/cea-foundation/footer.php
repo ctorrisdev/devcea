@@ -1,31 +1,70 @@
 <footer class="footer">
     <div class="grid-container full">
+    
+    	<div class="grid-x  align-stretch border-top">
+    
+	    	<div class="cell medium-4 align-self-middle">
 
-
-		<div class="grid-x grid-padding-x grid-padding-y align-middle" style="border-top: 1px solid #000">
+				<div class="grid-x grid-padding-x grid-padding-y">
+				
+		 			<div class="cell">
+						<ul class="no-bullet text-center">
+							<li><a href="<?php echo get_permalink('25'); ?>">&agrave; propos</a></li>
+							<li><a href="<?php echo get_permalink('35'); ?>">contact</a></li>
+							<li><a href="<?php echo get_permalink('33'); ?>">adh&egrave;rer</a></li>
+						</ul>
+					</div>
+					
+				</div>
+				
+	    	</div>
+	    	
+	    	<div class="cell medium-4 border-left">
+	    	
+	    		<div class="grid-container full">
+	    	
+		    		<div class="grid-x grid-padding-x grid-padding-y">
+						
+			 			<div class="cell">
+							<ul class="no-bullet text-center">
+								<li>
+									<label>Abonnez-vous &agrave; notre newsletter</label>
+									<div class="input-group">
+										<input class="input-group-field" type="text">
+										<div class="input-group-button">
+									    	<input type="submit" class="button" value="ok">
+									    </div>
+									</div>
+								</li>
+								<li><a href="<?php echo get_permalink('29'); ?>">facebook</a></li>
+								<li><a href="<?php echo get_permalink('35'); ?>">twitter</a></li>
+							</ul>
+						</div>
+						
+		    		</div>
+	    		</div>
+	    	</div>
+	    	
+	    	<div class="cell medium-4 border-left">
+	    	
+	    		<div class="grid-container full">
+	    	
+		    		<div class="grid-x grid-padding-x grid-padding-y">		
+								
+						<div class="cell">
+						<br>
+							<ul class="no-bullet text-center">
+								<li><a href="<?php echo get_permalink('35'); ?>">informations l&eacute;gales</a></li>
+								<li><a href="<?php echo get_permalink('33'); ?>">cr&eacute;dits</a></li>
+							</ul>
+			
+						</div>
+						
+		    		</div>
+	    		</div>
+			</div>
 		
- 			<div class="cell medium-4">
-				<ul class="no-bullet text-center">
-					<li><a href="<?php echo get_permalink('25'); ?>">&agrave; propos</a></li>
-					<li><a href="<?php echo get_permalink('35'); ?>">contact</a></li>
-					<li><a href="<?php echo get_permalink('33'); ?>">adh&egrave;rer</a></li>
-				</ul>
-			</div>
- 			<div class="cell medium-4 border-left">
-				<ul class="no-bullet text-center">
-					<li><a href="<?php echo get_permalink('29'); ?>">facebook</a></li>
-					<li><a href="<?php echo get_permalink('35'); ?>">twitter</a></li>
-				</ul>
-
-			</div>
-			<div class="cell medium-4 border-left">
-				<ul class="no-bullet text-center">
-					<li><a href="<?php echo get_permalink('35'); ?>">informations l&eacute;gales</a></li>
-					<li><a href="<?php echo get_permalink('33'); ?>">cr&eacute;dits</a></li>
-				</ul>
-
-			</div>
-		</div>
+	    </div>
 
 		<div class="grid-x grid-padding-x grid-padding-y align-middle" style="border-top: 1px solid #000">
  			<div class="cell medium-12 text-center">

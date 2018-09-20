@@ -18,7 +18,7 @@ get_header(); ?>
 					<div class="cell">
 						<div class="stacked-for-small expanded button-group">
 						<a href="#" class="button primary"><?php _e('Liste par ordre alphab&eacute;tique',''); ?></a>
-						<a href="#" class="button primary"><?php _e('Liste par zone g&eacute;graphique',''); ?></a>
+						<a href="#" class="button primary"><?php _e('Liste par zone g&eacute;ographique',''); ?></a>
 						</div>
 					</div>
 				</div>
@@ -29,7 +29,7 @@ get_header(); ?>
 			      <div class="cell">
 			      	<h3>A</h3>
 				      	<ul class="no-bullet">
-							<li><a href="http://bitumas.com/cea/sinformer/annuaire/tpl-commissaire/">AIRAULT Damien</a></li>
+							<li><a href="<?= get_home_url(); ?>/sinformer/annuaire/tpl-commissaire/">AIRAULT Damien</a></li>
 							<li>LESSANDRINI Michela</li>
 							<li>ALKEMA Hanna</li>
 							<li>ANDRE M&eacute;lanie</li>

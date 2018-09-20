@@ -54,7 +54,7 @@ get_header(); ?>
           
           <div class="padding-x padding-y border-top bg-blanc">
             <p class="h2 serif" style=" margin:auto;font-weight: 600; ">
-              <img src="http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/cea-logo.svg" style="height:150px" alt="CEA"><br><br> Fondée en 2007,<br> C-E-A | Association française des commissaires d'exposition<br> a pour vocation
+              <img src="<?= get_template_directory_uri(); ?>//images/cea-logo.svg" style="height:150px" alt="CEA"><br><br> Fondée en 2007,<br> C-E-A | Association française des commissaires d'exposition<br> a pour vocation
               de regrouper les personnes exerçant une activité de commissaire d'exposition d'art contemporain en France et de constituer une plateforme de réflexion, de promotion et d'organisation d'actions et de projets autour de cette activité.
             </p>
           </div>

@@ -16,14 +16,14 @@ a{line-height:inherit;color:black !important;text-decoration:none;cursor:pointer
  */
 
 @font-face {
-  font-family: "foundation-icons";
-  src: url("fonts/foundation-icons.eot");
-  src: url("fonts/fonts/foundation-icons.eot?#iefix") format("embedded-opentype"),
-       url("fonts/foundation-icons.woff") format("woff"),
-       url("fonts/foundation-icons.ttf") format("truetype"),
-       url("fonts/foundation-icons.svg#fontcustom") format("svg");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "foundation-icons";
+    src: url("fonts/foundation-icons.eot");
+    src: url("fonts/fonts/foundation-icons.eot?#iefix") format("embedded-opentype"),
+        url("fonts/foundation-icons.woff") format("woff"),
+        url("fonts/foundation-icons.ttf") format("truetype"),
+        url("fonts/foundation-icons.svg#fontcustom") format("svg");
+    font-weight: normal;
+    font-style: normal;
 }
 
 .fi-address-book:before,
@@ -309,15 +309,15 @@ a{line-height:inherit;color:black !important;text-decoration:none;cursor:pointer
 .fi-yen:before,
 .fi-zoom-in:before,
 .fi-zoom-out:before {
-  font-family: "foundation-icons";
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  text-decoration: inherit;
+    font-family: "foundation-icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    text-decoration: inherit;
 }
 
 .fi-address-book:before { content: "\f100"; }
@@ -607,30 +607,30 @@ a{line-height:inherit;color:black !important;text-decoration:none;cursor:pointer
 
 
 #menu_drag{
-position: absolute;
-z-index: 1000000;
-min-width: 200px;
-box-shadow: 0px 0px 0px rgba(0,0,0,0);
-padding: 1em;
-border-radius: 10px;
-top: 50vh;
-left: 50vw;
-    
--webkit-transform: translate(-50%,-50%);
+    position: absolute;
+    z-index: 1000000;
+    min-width: 200px;
+    box-shadow: 0px 0px 0px rgba(0,0,0,0);
+    padding: 1em;
+    border-radius: 10px;
+    top: 50vh;
+    left: 50vw;
+
+    -webkit-transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
-    
+
     transition: box-shadow .2s ease}
 
 #menu_drag:hover{
-box-shadow: 0px 2px 5px rgba(0,0,0,.4);
-cursor: all-scroll; 
-transition: box-shadow .2s ease}
+    box-shadow: 0px 2px 5px rgba(0,0,0,.4);
+    cursor: all-scroll; 
+    transition: box-shadow .2s ease}
 
 #menu_drag .menu-logo{height: 50px; fill:#fff}
 
 .drilldown .is-drilldown-submenu{
-background: #6CBDFF}
+    background: #6CBDFF}
 
 #menu_drag .drilldown a {
     padding: .7rem 1rem;
@@ -640,32 +640,32 @@ background: #6CBDFF}
 }
 
 #menu_drag.fixed{
-	position: fixed
+    position: fixed
 }
 
 ul.drilldown>li>a{
-font-size: 1.2em}
+    font-size: 1.2em}
 .is-submenu-item.is-drilldown-submenu-item a{
-font-size: 1.6em;
-line-height: 1em}
+    font-size: 1.6em;
+    line-height: 1em}
 
 @media screen and (mim-width: 40em) and (max-width: 63.9375em) {
-.h2, h2 {
-    font-size: 2rem !important;
-}
+    .h2, h2 {
+        font-size: 2rem !important;
+    }
 
 }
 
 body p, ul, ol{
-font-size: .8em !important;
-font-family: "helvetica neue", sans-serif}
+    font-size: .8em !important;
+    font-family: "helvetica neue", sans-serif}
 
 .serif{
-  font-family: 'Vollkorn',"Didot", serif !important;
+    font-family: 'Vollkorn',"Didot", serif !important;
 }
 
 .blue{
-  color:#3399ff;
+    color:#3399ff;
 }
 
 p a{
@@ -679,80 +679,80 @@ p a:hover{
 }
 
 .site-navigation.top-bar{
-	background: #fff;
-	border-bottom: 1px solid #000;
-	z-index: 1000
+    background: #fff;
+    border-bottom: 1px solid #000;
+    z-index: 1000
 }
 
 .top-bar-title a span{
-font-family: "helvetica neue", sans-serif}
+    font-family: "helvetica neue", sans-serif}
 
 .site-navigation.top-bar.is-stuck{
-	z-index: 1001;
-	box-shadow: 0 0 5px rgba(0,0,0,.6)
+    z-index: 1001;
+    box-shadow: 0 0 5px rgba(0,0,0,.6)
 }
 
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-.top-bar-title a span{
-font-size: .7em;}}
+    .top-bar-title a span{
+        font-size: .7em;}}
 
 
 @media screen and (min-width: 64em) {
-.top-bar-title a span{
-font-size: .9em;}
+    .top-bar-title a span{
+        font-size: .9em;}
 
 }
 
 .sidebar{
-	border-bottom: 1px solid #000;
-	background: #fff
+    border-bottom: 1px solid #000;
+    background: #fff
 }
 
 .bandeau {
-z-index: 10000;
-position: fixed; 
-bottom: -6px; 
-width: 100%;
+    z-index: 10000;
+    position: fixed; 
+    bottom: -6px; 
+    width: 100%;
 
-border-top: 1px solid #000; 
-font-size: 1em;
+    border-top: 1px solid #000; 
+    font-size: 1em;
 
 }
 
 .bandeau nav{
-	background: #fff; 
-	color: #000 !important;
-	padding: .5em 0
+    background: #fff; 
+    color: #000 !important;
+    padding: .5em 0
 }
 
 .bandeau nav a {
-	font-family: "vollkorn" !important;
-	font-weight: 600 !important;
-	color: #000 !important
+    font-family: "vollkorn" !important;
+    font-weight: 600 !important;
+    color: #000 !important
 }
 
 .bandeau nav li.separator{
-	border-left: 1px solid #000
+    border-left: 1px solid #000
 }
 
 .bandeau marquee{
-	background: #000; 
-	color: white !important
+    background: #000; 
+    color: white !important
 }
 
 .bandeau marquee a {
-color: white !important;
-font-family: 'Montserrat', sans-serif
+    color: white !important;
+    font-family: 'Montserrat', sans-serif
 }
 
 .marquee-space{margin: 0 2em}
 
 
 .footer label, .footer a{
-color: #000;
-font-family: "Vollkorn", serif;
-font-size: 1.2em;
-font-weight: bold}
+    color: #000;
+    font-family: "Vollkorn", serif;
+    font-size: 1.2em;
+    font-weight: bold}
 
 
 .footer ul{margin-bottom: 0}
@@ -760,48 +760,48 @@ font-weight: bold}
 
 
 .border-top{
-border-top: 1px solid #000 !important}
+    border-top: 1px solid #000 !important}
 .border-left{
-border-left: 1px solid #000 !important}
+    border-left: 1px solid #000 !important}
 .border-bottom{
-border-bottom: 1px solid #000 !important}
+    border-bottom: 1px solid #000 !important}
 
 @media screen and (max-width: 39.9375em) {
-	.border-left{
-border-left: 0px solid #000 !important;
-border-top: 1px solid #000}
+    .border-left{
+        border-left: 0px solid #000 !important;
+        border-top: 1px solid #000}
 
 }
 
 .bg-zigouigoui{
-  background-color: #ffffff;
-background: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-zigouigoui.svg) center center;}
+    background-color: #ffffff;
+    background: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-zigouigoui.svg) center center;}
 
 .bg-lift{
-  background-color: #ffffff;
-background: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-lift.svg) center center;}
+    background-color: #ffffff;
+    background: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-lift.svg) center center;}
 
 .bg-structurer{
-  background-color: #ffffff;
-background: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-structurer.svg) center center;}
+    background-color: #ffffff;
+    background: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-structurer.svg) center center;}
 
 
 .bg-informer{
-  background-color: #ffffff;
-background: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-informer.svg) center center;}
+    background-color: #ffffff;
+    background: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-informer.svg) center center;}
 
 .bg-zigzag{
-  background-color: #ffffff;
-background-image: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-zigzag.svg);}
+    background-color: #ffffff;
+    background-image: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-zigzag.svg);}
 
 .bg-echang{
-  background-color: #ffffff;
-background-image: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-echanger.svg);}
+    background-color: #ffffff;
+    background-image: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-echanger.svg);}
 
 
 .bg-search{
-background-color: #ffffff;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23000000' fill-opacity='1' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23000000' fill-opacity='1' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
 
 .bg-blanc{background: #fff; color: #000}
 .bg-black{background: #000; color: #fff}
@@ -842,28 +842,28 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 
 .bg-blue .drilldown .js-drilldown-back>a::before{
-	border-color: transparent #fFF transparent transparent;
+    border-color: transparent #fFF transparent transparent;
 }
 
 .padding-x{
-  padding-left: .9375rem !important;
-  padding-right: .9375rem !important
+    padding-left: .9375rem !important;
+    padding-right: .9375rem !important
 }
 
 .padding-y{
-  padding-top: .9375rem !important;
-  padding-bottom: .9375rem !important
+    padding-top: .9375rem !important;
+    padding-bottom: .9375rem !important
 }
 @media screen and (max-width: 39.9375em) {
-  .padding-x{
-  padding-left: .625rem !important;
-  padding-right: .625rem !important
-}
+    .padding-x{
+        padding-left: .625rem !important;
+        padding-right: .625rem !important
+    }
 
-.padding-y{
-  padding-top: .625rem !important;
-  padding-bottom: .625rem !important
-}
+    .padding-y{
+        padding-top: .625rem !important;
+        padding-bottom: .625rem !important
+    }
 }
 
 
@@ -874,17 +874,17 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 .nav-links a{
-	color: #fff !important
+    color: #fff !important
 }
 
 
 .list-posts article{
-	padding: 1em 0
+    padding: 1em 0
 }
 
 .list-posts article + article{
-	border-top: 1px solid #000;
-	padding-top: 2em
+    border-top: 1px solid #000;
+    padding-top: 2em
 }
 .pagination {
     margin-left: 0;
@@ -892,10 +892,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 img {
-  filter: gray;
+    filter: gray;
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%) !important;
-  filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"); /* Firefox 10+, Firefox on Android */ 
+    filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"); /* Firefox 10+, Firefox on Android */ 
 }
 
 img:hover, img.badge-tag {
@@ -923,47 +923,47 @@ img:hover, img.badge-tag {
 }
 
 .group-list li{
-padding: .5em 0}
+    padding: .5em 0}
 .group-list li + li{border-top: 1px solid #000}
 
 @media screen and (max-width: 39.9375em) {
 
-	.badge-tag{
-		position: absolute;
-		width: 100px;
-		right: 5px;
-		z-index: 1000;
-		bottom: 0px;
-	}
+    .badge-tag{
+        position: absolute;
+        width: 100px;
+        right: 5px;
+        z-index: 1000;
+        bottom: 0px;
+    }
 
-	.list-posts article .badge-tag{
-		position: absolute;
-		width: 100px;
-		right: 5px;
-		z-index: 1000;
-		bottom: 10px;	
-	}
+    .list-posts article .badge-tag{
+        position: absolute;
+        width: 100px;
+        right: 5px;
+        z-index: 1000;
+        bottom: 10px;	
+    }
 
 }
 
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
 
-	.badge-tag{
-		position: absolute;
-		width: 100px;
-		left: -50px;
-		z-index: 1000;
-		bottom: 65px;
-	}
+    .badge-tag{
+        position: absolute;
+        width: 100px;
+        left: -50px;
+        z-index: 1000;
+        bottom: 65px;
+    }
 
-	.list-posts article .badge-tag{		
-		position: absolute;
-		width: 100px;
-		right: 0 !important;
-		z-index: 1000;
-		bottom: 30px;
-  left: auto
-	}
+    .list-posts article .badge-tag{		
+        position: absolute;
+        width: 100px;
+        right: 0 !important;
+        z-index: 1000;
+        bottom: 30px;
+        left: auto
+    }
 
 }
 
@@ -971,37 +971,37 @@ padding: .5em 0}
 
 @media screen and (min-width: 64em) {
 
-	.badge-tag{
-		position: absolute;
-width: 300px;
-left: -100px;
-z-index: 1000;
-mix-blend-mode: multiply;
-	}
+    .badge-tag{
+        position: absolute;
+        width: 300px;
+        left: -100px;
+        z-index: 1000;
+        mix-blend-mode: multiply;
+    }
 
-  .list-posts article .badge-tag{
-position: absolute;
-width: 200px;
-right: 5%;
-z-index: 1000;
-bottom: 40px;
-left: auto;
-  }
-  
-  .list-posts-search .badge-tag {
-    position: absolute;
-    width: 300px;
-    right: 0;
-    z-index: 1000;
-    mix-blend-mode: multiply;
-    left: auto;
-}
+    .list-posts article .badge-tag{
+        position: absolute;
+        width: 200px;
+        right: 5%;
+        z-index: 1000;
+        bottom: 40px;
+        left: auto;
+    }
+
+    .list-posts-search .badge-tag {
+        position: absolute;
+        width: 300px;
+        right: 0;
+        z-index: 1000;
+        mix-blend-mode: multiply;
+        left: auto;
+    }
 }
 
 
 .breadcrumbs li,.breadcrumbs li a{
-	text-transform: lowercase;
-	color: #fff !important
+    text-transform: lowercase;
+    color: #fff !important
 }
 
 section.widget + section.widget{ border-top: 1px solid #000; padding-top: .9375rem}
@@ -1010,17 +1010,17 @@ article.post{position: relative}
 
 /* CALENDAR */
 .widget_calendar tbody td.a_event{
-	background: url('http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/circle.svg')no-repeat center;
-	background-size: contain;
+    background: url('http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/circle.svg')no-repeat center;
+    background-size: contain;
 }
 .widget_calendar tbody td.a_event a{
-	font-family: sans-serif;
-  font-weight: 400 !important;
-  font-size: .9em
+    font-family: sans-serif;
+    font-weight: 400 !important;
+    font-size: .9em
 }
 
 #today{
-  font-weight: 600
+    font-weight: 600
 }
 
 /* PAGE CURATOR */
@@ -1032,31 +1032,31 @@ article.post{position: relative}
 }
 
 .year{ font-family: "Montserrat", sans-serif;
-	font-weight: 600
+       font-weight: 600
 }
 
 .list-posts-search{
-  padding: 2em 0
+    padding: 2em 0
 }
 .list-posts-search article:nth-child(odd){
-  padding-right: 1em;
-  border-right: 1px solid #000;
+    padding-right: 1em;
+    border-right: 1px solid #000;
 }
 
 .list-posts-search article:nth-child(even){
-  padding-left: 1em;
+    padding-left: 1em;
 }
 
 .list-posts-search article:nth-child(3),
 .list-posts-search article:nth-child(4),
 .list-posts-search article:nth-child(5),
 .list-posts-search article:nth-child(6){
-  padding-top: 1em;
-   border-top: 1px solid #000
+    padding-top: 1em;
+    border-top: 1px solid #000
 }
 
 .post-search{
-  position: relative
+    position: relative
 }
 
 
@@ -1064,8 +1064,8 @@ article.post{position: relative}
 /* ORBIT */ 
 
 .orbit-container{
-	outline: none;
-	background-size: 400px !important
+    outline: none;
+    background-size: 400px !important
 }
 
 .orbit-bullets button {
@@ -1094,46 +1094,46 @@ article.post{position: relative}
 }
 
 .slide-text{
-	padding: 4em;
+    padding: 4em;
 }
 
 .slide-text p{
-	font-size: 1em !important
+    font-size: 1em !important
 }
 
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-.slide-text{
-	padding: 2em
-}
+    .slide-text{
+        padding: 2em
+    }
 }
 
 @media screen and (max-width:  39.9375em) {
-.slide-text{
-	padding: 1em
-}
+    .slide-text{
+        padding: 1em
+    }
 }
 
 .pagination{
-  z-index: 100
+    z-index: 100
 }
 
 
 
 .button{
-position: relative
+    position: relative
 }
 
 .button{
-	background-size: cover;
-	background:url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/check.svg)no-repeat center;
+    background-size: cover;
+    background:url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/check.svg)no-repeat center;
 }
 
 
 /* ECHANGER */
 
 .echanger-part + .echanger-part{
-	border-top: 1px solid #000
+    border-top: 1px solid #000
 }
 .media-object-section{
-	padding-left: .9375rem
+    padding-left: .9375rem
 }

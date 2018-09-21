@@ -3,9 +3,8 @@
 Template Name: tpl-home
 */
 
-
 get_header(); ?>
-
+<?php while(have_posts()) : the_post(); ?>
   <div class="grid-container full">
     <div class="grid-x align-strech">
 
@@ -14,9 +13,7 @@ get_header(); ?>
 
         <div class="orbit text-center " role="region" aria-label="publications" data-orbit data-options="autoPlay:0;data-timer-delay:1;">
           <div class="orbit-wrapper">
-
             <ul class="orbit-container">
-
               <li class="is-active orbit-slide">
                 <figure class="orbit-figure">
                   <img class="orbit-image" src="http://c-e-a.asso.fr/wp-content/uploads/2015/06/RealitesduCommissariat_Couv_C-E-A-657x1024.jpg" alt="Space">
@@ -48,19 +45,14 @@ get_header(); ?>
 
       <!-- PART 2 -->
       <div class="cell medium-4  bg-informer text-center border-left" style=" display:flex; justify-content: center">
-
-        <div class="cell small-12 align-self-bottom">
-
-          
+        <div class="cell small-12 align-self-bottom">          
           <div class="padding-x padding-y border-top bg-blanc">
             <p class="h2 serif" style=" margin:auto;font-weight: 600; ">
-              <img src="<?= get_template_directory_uri(); ?>//images/cea-logo.svg" style="height:150px" alt="CEA"><br><br> Fondée en 2007,<br> C-E-A | Association française des commissaires d'exposition<br> a pour vocation
-              de regrouper les personnes exerçant une activité de commissaire d'exposition d'art contemporain en France et de constituer une plateforme de réflexion, de promotion et d'organisation d'actions et de projets autour de cette activité.
+              <img src="<?= get_template_directory_uri(); ?>//images/cea-logo.svg" style="height:150px" alt="CEA"><br><br> 
+              <?= nl2br(strip_tags(get_the_content())); ?>
             </p>
           </div>
-
         </div>
-
       </div>
 
 
@@ -105,4 +97,7 @@ get_header(); ?>
 
     </div>
   </div>
-  <?php get_footer();
+
+<?php endwhile;
+
+ get_footer();

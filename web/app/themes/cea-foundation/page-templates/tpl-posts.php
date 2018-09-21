@@ -46,7 +46,7 @@ get_header();
         </div>
 
 
-        <div class="cell medium-4 bg-black text-center" style="padding-top: 2em justify-content: center">
+        <div class="cell medium-4 bg-black text-center" style="padding-top: 2em; justify-content: center">
             <p class="h1 serif" style="font-weight: 600; ">
                 Fondée en 2007,<br> C-E-A | Association française des commissaires d'exposition<br> a pour vocation de regrouper les personnes exerçant une activité de commissaire d'exposition d'art contemporain en France et de constituer une plateforme de réflexion, de promotion et d'organisation d'actions et de projets autour de cette activité. 
             </p>

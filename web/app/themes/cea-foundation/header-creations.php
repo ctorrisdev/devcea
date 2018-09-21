@@ -28,6 +28,6 @@
 
         <?php wp_head(); ?>
     </head>
-    <body <?php body_class(); ?>><h1>CREATIONS TEMPLATE</h1>
-
+    <body <?php body_class(); ?>>
+    
       

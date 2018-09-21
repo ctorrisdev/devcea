@@ -11,7 +11,7 @@
     </ul>
 </li>
 <li><a href="<?= get_home_url(); ?>/echanger/">&eacutechanger</a></li>
-  <li><a href="<?= get_home_url(); ?>/curater-2/">curater</a></li>
+  <li><a href="<?= get_home_url(); ?>/curater/">curater</a></li>
 <li>
     <a href="#">S'informer</a>
     <ul class="vertical menu">

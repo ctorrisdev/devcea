@@ -5,7 +5,7 @@
 		<img src="https://via.placeholder.com/100x100">
 	</div>
 	<div class="cell text-center">
-		<h4>Nom du commissaire</h4>
+		<h4>NOM Pr&eacute;nom</h4>
 	</div>
 	<div class="cell">
 	<ul class="no-bullet">

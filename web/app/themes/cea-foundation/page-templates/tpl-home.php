@@ -44,7 +44,7 @@ get_header(); ?>
 
 
       <!-- PART 2 -->
-      <div class="cell medium-4  bg-informer text-center border-left" style=" display:flex; justify-content: center">
+      <div class="cell medium-4  bg-informer text-center border-left border-right" style=" display:flex; justify-content: center">
         <div class="cell small-12 align-self-bottom">          
           <div class="padding-x padding-y border-top bg-blanc">
             <p class="h2 serif" style=" margin:auto;font-weight: 600; ">
@@ -57,7 +57,7 @@ get_header(); ?>
 
 
       <!-- PART 3 -->
-      <div class="cell medium-4 border-left bg-zigzag">
+      <div class="cell medium-4 bg-zigzag">
 
         <div class="orbit text-center bg-black padding-y" role="region" aria-label="news" data-orbit data-options="data-timer-delay:3000;">
           <div class="orbit-wrapper">

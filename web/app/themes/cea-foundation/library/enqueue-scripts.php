@@ -37,7 +37,7 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 	function foundationpress_scripts() {
 
 		// Enqueue the main Stylesheet.
-		wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path( 'app.css' ), array(), '2.4', 'all' );
+		wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path( 'app.css' ), array(), '2.9', 'all' );
 		wp_enqueue_style('animate-css-style', get_stylesheet_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path( 'animate.css') );
 
 		// Deregister the jquery version bundled with WordPress.

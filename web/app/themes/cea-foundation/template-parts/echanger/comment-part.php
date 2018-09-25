@@ -5,44 +5,66 @@
 	<div class="cell">
 		
 		<div class="media-object">
-			<i class="fi-comment"></i>
+			<i class="la la-2x la-comment"></i>
   
 			<div class="media-object-section">
-			    <h5>Un commentaire!</h5>
-			    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro at, tenetur cum beatae excepturi id ipsa? Esse dolor laboriosam itaque ea nesciunt, earum, ipsum commodi beatae velit id enim repellat.</p>
+				<div class="clearfix">
+				    <h5 class="float-left">Un commentaire! <small>par auteur, le 10.05.2018</small></h5>
+				    <div class="editor float-right">
+				    	<i class="la la-pencil"></i>
+				    	<i class="la la-trash"></i>
+				    </div>
+				</div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro at, tenetur cum beatae excepturi id ipsa? Esse dolor laboriosam itaque ea nesciunt, earum, ipsum commodi beatae velit id enim repellat.</p>
 			    
-			    <!-- Nested media object starts here -->
-			    <div class="media-object">
-					 <i class="fi-comments"></i>
+			    <!-- sous commentaire -->
+			    <div class="subcomment media-object">
+					 <i class="la la-lg la-comments"></i>
 				     <div class="media-object-section">
-				     	 <h6>sous commentaire!</h6>
+				     
+				     	<div class="clearfix">
+						    <h6 class="float-left">Sous commentaire <small>par auteur, le 10.05.2018</small></h6>
+						    <div class="editor float-right">
+						    	<i class="la la-pencil"></i>
+						    	<i class="la la-trash"></i>
+						    </div>
+						</div>
 				     	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas magni, quam mollitia voluptatum in, animi suscipit tempora ea consequuntur non nulla vitae doloremque. Eius rerum, cum earum quae eveniet odio.</p>
 				     </div>
 				</div>
-				<!-- And ends here -->
-				<!-- Nested media object starts here -->
-			    <div class="media-object">
-					 <i class="fi-comments"></i>
-				     <div class="media-object-section">
-				     	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas magni, quam mollitia voluptatum in, animi suscipit tempora ea consequuntur non nulla vitae doloremque. Eius rerum, cum earum quae eveniet odio.</p>
-				     </div>
-				</div>
-				<!-- And ends here -->
+				<!-- fin sous commentaire -->
+				
+				<!-- nouveau sous commentaire -->
+				<div class="media-object">
+				<div class="input-group">
+					<span class="input-group-label"><i class="la la-lg la-comments"></i></span>
+                    <input class="input-group-field" type="text">
+                    <div class="input-group-button">
+                        <button type="submit" class="button hollow"><i class="la la-lg la-mail-reply"></i></button>
+                    </div>
+                </div>
+                </div>
+                <!-- fin nouveau sous commentaire -->
 			</div>
-			
 			
 		</div>
-		<hr>
-				<div class="media-object">
-			<i class="fi-comment"></i>
-		
-					<div class="media-object-section">
-			    <h5>Un deuxi&egrave;me!</h5>
-			    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro at, tenetur cum beatae excepturi id ipsa? Esse dolor laboriosam itaque ea nesciunt, earum, ipsum commodi beatae velit id enim repellat.</p>
-			    
-			</div>
-				</div>
 	</div>
+	
+	<hr>
+	
+	<!-- nouveau commentaire -->
+	<div class="cell">    
+	    <div class="media-object">
+			<div class="input-group">
+                <span class="input-group-label"><i class="la la-lg la-comment"></i></span>
+                <input class="input-group-field" type="text">
+                <div class="input-group-button">
+                    <button type="submit" class="button hollow"><i class="la la-lg la-pencil"></i></button>
+                </div>
+            </div>
+	    </div>		
+	</div>
+	<!-- fin nouveau commentaire -->
 
 </div>
 		

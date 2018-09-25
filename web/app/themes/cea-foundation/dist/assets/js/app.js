@@ -4,6 +4,11 @@ $( "td:has(a)" ).addClass( "a_event" );
 
 $(document).ready(function(){
     $( "#menu_drag" ).draggable();
+    
+    $("#menu_drag i.la-bars").click(function(){
+        $(".vertical.menu").slideToggle();
+        $(this).toggleClass("la-close");
+        });
   } );
   
   $(function(){

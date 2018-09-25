@@ -8,7 +8,7 @@
   
 			<div class="media-object-section">
 			    <h5>Un commentaire en video <small>de auteur</small></h5>
-			    <iframe width="560" height="315" src="https://www.youtube.com/embed/5Peo-ivmupE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			    <div class="responsive-embed"><iframe width="560" height="315" src="https://www.youtube.com/embed/5Peo-ivmupE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
 			    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro at, tenetur cum beatae excepturi id ipsa? Esse dolor laboriosam itaque ea nesciunt, earum, ipsum commodi beatae velit id enim repellat.</p>
 			    
 			    <!-- Nested media object starts here -->

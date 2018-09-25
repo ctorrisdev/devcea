@@ -7,7 +7,7 @@
 
 - WooCommerce Sidebar issues [\#1057](https://github.com/olefredrik/FoundationPress/issues/1057)
 
-**Closed issues:**
+**Closed issues:** test
 
 - Responsive $grid-margin-gutters only work when XY-cell is included with a breakpoint [\#1121](https://github.com/olefredrik/FoundationPress/issues/1121)
 - Basic grid not working? [\#1117](https://github.com/olefredrik/FoundationPress/issues/1117)

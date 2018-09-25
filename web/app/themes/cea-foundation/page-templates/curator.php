@@ -14,7 +14,7 @@ get_header();
 
 
             <?php get_template_part('template-parts/breadcrumbs-part'); ?>
-<?php get_template_part('template-parts/editor-part'); ?>		
+            <?php get_template_part('template-parts/editor-part'); ?>		
 
             <div class="grid-x grid-padding-x grid-padding-y text-center" style="border-bottom: 1px solid #000;">
                 <div class="cell curator_name">
@@ -151,7 +151,7 @@ get_header();
 
             <div class="grid-x grid-padding-x grid-padding-y text-center" style="border-top: 1px solid #000; background: #000; color: #fff">
                 <div class="cell medium-12" >	
-<?php the_post_navigation(); ?>
+                    <?php the_post_navigation(); ?>
                 </div>
             </div>
 
@@ -162,7 +162,7 @@ get_header();
 
             <div class="grid-x grid-padding-x grid-padding-y">
                 <div class="cell medium-12">
-<?php get_sidebar(); ?>
+                    <?php get_sidebar(); ?>
                 </div>
             </div>
         </div>

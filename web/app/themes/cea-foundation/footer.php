@@ -1,31 +1,21 @@
 <footer class="footer">
     <div class="grid-container full">
     
-    	<div class="grid-x  align-stretch border-top">
+    	<div class="grid-x grid-padding-x grid-padding-y align-middle border-top">
     
-	    	<div class="cell medium-4 align-self-middle">
+	    	<div class="cell small-6 medium-4 align-self-middle small-order-2 medium-order-1">
 
-				<div class="grid-x grid-padding-x grid-padding-y">
-				
-		 			<div class="cell">
 						<ul class="no-bullet text-center">
 							<li><a href="<?php echo get_permalink('25'); ?>">&agrave; propos</a></li>
 							<li><a href="<?php echo get_permalink('35'); ?>">contact</a></li>
 							<li><a href="<?php echo get_permalink('33'); ?>">adh&egrave;rer</a></li>
 						</ul>
-					</div>
-					
-				</div>
-				
+
 	    	</div>
 	    	
-	    	<div class="cell medium-4 border-left">
+	    	<div class="cell medium-4 border-left border-right small-order-1 medium-order-2">
 	    	
-	    		<div class="grid-container full">
-	    	
-		    		<div class="grid-x grid-padding-x grid-padding-y">
-						
-			 			<div class="cell">
+
 							<ul class="no-bullet text-center">
 								<li>
 									<label>Abonnez-vous &agrave; notre newsletter</label>
@@ -36,37 +26,25 @@
 									    </div>
 									</div>
 								</li>
-								<li><a href="<?php echo get_permalink('29'); ?>">facebook</a></li>
+								<li><a href="https://www.facebook.com/cea.asso">facebook</a></li>
 								<li><a href="<?php echo get_permalink('35'); ?>">twitter</a></li>
 							</ul>
-						</div>
-						
-		    		</div>
-	    		</div>
+
 	    	</div>
 	    	
-	    	<div class="cell medium-4 border-left">
+	    	<div class="cell small-6 medium-4 small-order-3">
 	    	
-	    		<div class="grid-container full">
-	    	
-		    		<div class="grid-x grid-padding-x grid-padding-y">		
-								
-						<div class="cell">
-						<br>
+
 							<ul class="no-bullet text-center">
 								<li><a href="<?php echo get_permalink('35'); ?>">informations l&eacute;gales</a></li>
 								<li><a href="<?php echo get_permalink('33'); ?>">cr&eacute;dits</a></li>
 							</ul>
-			
-						</div>
-						
-		    		</div>
-	    		</div>
+
 			</div>
 		
 	    </div>
 
-		<div class="grid-x grid-padding-x grid-padding-y align-middle" style="border-top: 1px solid #000">
+		<div class="partners grid-x grid-padding-x grid-padding-y align-middle border-top">
  			<div class="cell medium-12 text-center">
 <img src="<?php echo get_template_directory_uri(); ?>/images/partenaires/cite-des-arts.png" style="height:80px" />
 &nbsp;
@@ -78,11 +56,6 @@
 		</div>
 
             <?php //dynamic_sidebar( 'footer-widgets' ); ?>
-
-
-            <div>intégration d'un cadre réservé à l'inscription à la newsletter</div>
-
-
 
     </div>
 

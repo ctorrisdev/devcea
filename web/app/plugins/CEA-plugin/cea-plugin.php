@@ -50,8 +50,13 @@ if (function_exists('acf_add_options_page')) {
 
 function add_scripts() {
     global $plugs_version;
-    wp_enqueue_script('cea-front-script', plugin_dir_url(__FILE__) . '/js/front.js', array('jquery'), $plugs_version, true);
+    
+    wp_enqueue_style('cea-plugin-css-front', plugin_dir_url(__FILE__) . '/front.css',null,$plugs_version);
+
+    wp_enqueue_script('dropzone', plugin_dir_url(__FILE__) . '/js/dropzone.js', array('jquery'));
+    wp_enqueue_script('cea-front-script', plugin_dir_url(__FILE__) . '/js/front.js', array('jquery','dropzone'), $plugs_version, true);
     wp_localize_script('cea-front-script', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
+    
 }
 
 add_action('wp_enqueue_scripts', 'add_scripts');

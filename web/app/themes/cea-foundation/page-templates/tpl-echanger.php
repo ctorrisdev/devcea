@@ -64,7 +64,7 @@ $cea_user = new cea_user($user->ID);
                             <?php
                             if (in_array('curator', (array) $user->roles) || in_array('administrator', (array) $user->roles) || in_array('admin_cea', (array) $user->roles)) :
                                 ?>
-                                <p><button class="button hollow" data-open="add_group_form">Créer un nouveau groupe</button></p>
+                                <p><button class="button hollow" data-open="add_group_form"><?= __('Créer un nouveau groupe'); ?></button></p>
                             <?php endif;
                             ?>
 
@@ -93,7 +93,7 @@ $cea_user = new cea_user($user->ID);
                             <form id="groupsearch">
                                 <div class="input-group">
                                     <span class="input-group-label"><i class="fi-magnifying-glass"></i></span>
-                                    <input class="input-group-field" type="text" placeholder="Rechercher un groupe">
+                                    <input class="input-group-field" type="text" placeholder="<?= __('Rechercher un groupe'); ?>">
                                 </div>
                             </form>
                             <div>
@@ -112,7 +112,10 @@ $cea_user = new cea_user($user->ID);
 
             <div class="cell medium-8 border-left">
 
-                <?php get_template_part('template-parts/echanger/comment-part'); ?>
+                <?php 
+                set_query_var( 'groupeid', $groupeid );
+                get_template_part('template-parts/echanger/comment-part',"groupeid"); 
+                ?>
                 <?php // get_template_part('template-parts/echanger/video-part'); ?>
             </div>
 
@@ -123,7 +126,6 @@ $cea_user = new cea_user($user->ID);
         </div>
     </div>
     
-    <!-- Formulaires -->
 
     <div class="reveal" id="add_group_form" data-reveal>
         <h3>Création d'un nouveau groupe</h3>        

@@ -1195,6 +1195,10 @@ article.post{position: relative}
     padding-left: .9375rem
 }
 
+.hidden{
+    display:none;
+}
+
 
 /* FOOTER */
 .partners{

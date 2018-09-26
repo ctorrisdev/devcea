@@ -1,5 +1,4 @@
 <?php  
-extract($wp_query->query_vars, EXTR_SKIP);
 
 $author = get_user_by('id',$com->post_author); 
 ?>

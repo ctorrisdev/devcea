@@ -30,13 +30,9 @@ $cea_user = new cea_user($user->ID);
 
     <div class="grid-container full">
         <div class="grid-x">
-
-
             <div class="cell medium-2 bg-informer">
                 <?php get_template_part('template-parts/echanger/profile'); ?>
             </div> 
-
-
             <div class="cell medium-2 border-left bg-lift">
                 <div class="grid-container">
                     <div class="grid-x grid-padding-x grid-padding-y text-center">
@@ -112,9 +108,9 @@ $cea_user = new cea_user($user->ID);
 
             <div class="cell medium-8 border-left">
 
-                <?php 
-                set_query_var( 'groupeid', $groupeid );
-                get_template_part('template-parts/echanger/comment-part',"groupeid"); 
+                <?php
+                set_query_var('groupeid', $groupeid);
+                get_template_part('template-parts/echanger/comment-part', "groupeid");
                 ?>
                 <?php // get_template_part('template-parts/echanger/video-part'); ?>
             </div>
@@ -125,13 +121,17 @@ $cea_user = new cea_user($user->ID);
 
         </div>
     </div>
-    
+
 
     <div class="reveal" id="add_group_form" data-reveal>
         <h3>Création d'un nouveau groupe</h3>        
         <?php display_wall_add_group_form(); ?>
     </div>
 
+    <div class="reveal" id="mydropmodal" data-reveal>
+        <form id="ceadrop" class="dropzone">
+        </form>
+    </div>
 
 
 <?php endwhile; ?>

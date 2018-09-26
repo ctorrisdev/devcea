@@ -9,7 +9,7 @@ Dropzone.options.ceadrop = {
         this.on("complete", function (file, response) {
 
             files_for_this_post.push(file.xhr.response);
-
+            $('.dropmodalbutton').html('+' + files_for_this_post.length + ' doc(s)');
         });
     }
 }
@@ -48,8 +48,16 @@ jQuery(document).ready(function ($) {
     });
 
 
-    $('.submit_wall_post').click(function () {
-        var input = $(this).closest('.media-object').find('input');
+    /* 
+     * WALL ECHANGER FUNCTIONS 
+     * 
+     * 
+     * */
+
+
+    $(document).on('click','.submit_wall_post',function () {
+        var input = $(this).closest('.media-object').find('input');        
+        var responsediv = $(this).data('response_loc');        
         if(!input.val()){
             console.log('input empty');
             return(null);
@@ -64,16 +72,55 @@ jQuery(document).ready(function ($) {
                     'fichiers': JSON.stringify(files_for_this_post)
                 },
                 function (response) {
+                    /* reset the form */
                     input.val('');
-                    console.log(response);
+                    $('.dropmodalbutton').html('Add files');
                     var myDropzone = Dropzone.forElement("#ceadrop");
                     myDropzone.removeAllFiles();
-                    window.location.reload();
+                    $('.'+responsediv).after(response);
                 }
         );
     });
 
+    $(document).on('click','.show_dropzone',function(){
+        $(this).hide();
+       $(this).next('.dropzone').show();
+    });
+    $(document).on('click','.show-subform',function(){
+        $('.subform').hide();
+       $(this).hide();
+       $(this).next('.subform').show();
+    });
 
+    $(document).on('click','.load_next_wall_chunk',function(){
+        var offset = $(this).data('offset');
+        var container = $('.comments-loader');
+        var idgroupe = $(this).data('idgroupe');
+        var that = $(this);
+        that.removeClass('load_next_wall_chunk').removeClass('button').removeClass('hollow');
+        that.html(' (...) ');
+        
+         $.post(
+                ajaxurl,
+                {
+                    'action': 'comment_load',
+                    'groupeid': idgroupe,
+                    'offset' : offset,
+                },
+                function (response) {
+                   container.append(response);
+                   that.remove();
+                }
+        );
+    });
 
-
+    $(window).on("scroll load", function () {
+        if ($(document).find('.load_next_wall_chunk').length) {
+            var scrollHeight = $(document).find('.load_next_wall_chunk').position().top;
+           // console.log('look4' + $(window).scrollTop() + ' vs ' + scrollHeight);
+            if ($(window).scrollTop() + $(window).height() > scrollHeight) {
+                $(document).find('.load_next_wall_chunk').trigger('click');
+            }
+        }
+    });
 });

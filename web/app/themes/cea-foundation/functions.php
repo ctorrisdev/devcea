@@ -61,5 +61,6 @@ if (empty($_GET['et_fb'])):
     require_once( 'library/breadcrumbs.php' );
 
     require_once( 'library/custom-cea.php' );
+    require_once( 'library/functions-wall.php' );
 endif;
 

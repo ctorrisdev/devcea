@@ -16,6 +16,9 @@
  */
 $cea_post_type = filter_input(INPUT_GET, "post_type", FILTER_SANITIZE_STRING);
 
+
+require_once( 'cea-plugin.php' );
+
 if (empty($_GET['et_fb'])):
     /** Various clean up functions */
     require_once( 'library/cleanup.php' );
@@ -61,6 +64,8 @@ if (empty($_GET['et_fb'])):
     require_once( 'library/breadcrumbs.php' );
 
     require_once( 'library/custom-cea.php' );
-    require_once( 'library/functions-wall.php' );
+    require_once( 'includes/functions-wall.php' );
 endif;
+
+
 

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Enqueue all styles and scripts
  *
@@ -8,63 +9,67 @@
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
-
-
 // Check to see if rev-manifest exists for CSS and JS static asset revisioning
 //https://github.com/sindresorhus/gulp-rev/blob/master/integration.md
 
-if ( ! function_exists( 'foundationpress_asset_path' ) ) :
-	function foundationpress_asset_path( $filename ) {
-		$filename_split = explode( '.', $filename );
-		$dir            = end( $filename_split );
-		$manifest_path  = dirname( dirname( __FILE__ ) ) . '/dist/assets/' . $dir . '/rev-manifest.json';
+if (!function_exists('foundationpress_asset_path')) :
 
-		if ( file_exists( $manifest_path ) ) {
-			$manifest = json_decode( file_get_contents( $manifest_path ), true );
-		} else {
-			$manifest = [];
-		}
+    function foundationpress_asset_path($filename) {
+        $filename_split = explode('.', $filename);
+        $dir = end($filename_split);
+        $manifest_path = dirname(dirname(__FILE__)) . '/dist/assets/' . $dir . '/rev-manifest.json';
 
-		if ( array_key_exists( $filename, $manifest ) ) {
-			return $manifest[ $filename ];
-		}
-		return $filename;
-	}
+        if (file_exists($manifest_path)) {
+            $manifest = json_decode(file_get_contents($manifest_path), true);
+        } else {
+            $manifest = [];
+        }
+
+        if (array_key_exists($filename, $manifest)) {
+            return $manifest[$filename];
+        }
+        return $filename;
+    }
+
 endif;
 
 
-if ( ! function_exists( 'foundationpress_scripts' ) ) :
-	function foundationpress_scripts() {
+if (!function_exists('foundationpress_scripts')) :
 
-		// Enqueue the main Stylesheet.
-		wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path( 'app.css' ), array(), '2.9', 'all' );
-		wp_enqueue_style('animate-css-style', get_stylesheet_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path( 'animate.css') );
+    function foundationpress_scripts() {
 
-                
-		wp_deregister_script( 'jquery' );
-		wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '3.2.1', false );
-		wp_deregister_script( 'jquery-migrate' );
-		wp_register_script( 'jquery-migrate', '//code.jquery.com/jquery-migrate-3.0.1.min.js', array('jquery'), '3.0.1', false );
-		
-		wp_register_script( 'jqueryui', '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array(), '1.12.1', false );
-
-		// Enqueue jQuery migrate. Uncomment the line below to enable.
-		// wp_enqueue_script( 'jquery-migrate' );
-		wp_enqueue_script( 'jqueryui' );
+        // Enqueue the main Stylesheet.
+        wp_enqueue_style('main-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path('app.css'), array(), '2.9', 'all');
+        wp_enqueue_style('animate-css-style', get_stylesheet_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path('animate.css'));
 
 
-		// Enqueue Foundation scripts
-		wp_enqueue_script( 'foundation', get_stylesheet_directory_uri() . '/dist/assets/js/' . foundationpress_asset_path( 'app.js' ), array( 'jquery' ), '2.2', true );
+        wp_deregister_script('jquery');
+        wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '3.2.1', false);
+        wp_deregister_script('jquery-migrate');
+        wp_register_script('jquery-migrate', '//code.jquery.com/jquery-migrate-3.0.1.min.js', array('jquery'), '3.0.1', false);
 
-		// Enqueue FontAwesome from CDN. Uncomment the line below if you need FontAwesome.
-		//wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/5016a31c8c.js', array(), '4.7.0', true );
+        wp_register_script('jqueryui', '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js', array(), '1.12.1', false);
 
-		// Add the comment-reply library on pages where it is necessary
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-			wp_enqueue_script( 'comment-reply' );
-		}
+        // Enqueue jQuery migrate. Uncomment the line below to enable.
+        // wp_enqueue_script( 'jquery-migrate' );
+        wp_enqueue_script('jqueryui');
 
-	}
 
-	add_action( 'wp_enqueue_scripts', 'foundationpress_scripts' );
+        // Enqueue Foundation scripts
+        wp_enqueue_script('foundation', get_stylesheet_directory_uri() . '/dist/assets/js/' . foundationpress_asset_path('app.js'), array('jquery'), '2.2', true);
+
+        // Enqueue FontAwesome from CDN. Uncomment the line below if you need FontAwesome.
+        //wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/5016a31c8c.js', array(), '4.7.0', true );
+        // Add the comment-reply library on pages where it is necessary
+        if (is_singular() && comments_open() && get_option('thread_comments')) {
+            wp_enqueue_script('comment-reply');
+        }
+        
+        wp_enqueue_script('fescojs', get_stylesheet_directory_uri() . '/library/frescojs/fresco.js', array('jquery'));
+        wp_enqueue_style('fescojs-css', get_stylesheet_directory_uri() . '/library/frescojs/fresco.css');
+
+    }
+
+    add_action('wp_enqueue_scripts', 'foundationpress_scripts');
 endif;
+

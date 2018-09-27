@@ -9,12 +9,9 @@ get_header();
 	<div class="grid-container full">
 		<div class="grid-x ">
 
-			<div class="cell medium-8 border-right">
+			<div class="cell medium-12 border-right">
 
 				<div class="grid-container full">
-
-
-					<?php get_template_part('template-parts/breadcrumbs-part'); ?>
 
 					<div class="grid-x">
 						<div class="cell">
@@ -37,7 +34,7 @@ get_header();
 						<div class="tabs-panel is-active" id="panel1">
 
 
-							<div class="grid-x small-up-1 medium-up-3 large-up-4 align-stretch list-curators text-center">
+							<div class="grid-x small-up-1 medium-up-3 large-up-6 align-stretch list-curators text-center">
 
 								<div class="cell">
 
@@ -140,10 +137,10 @@ get_header();
 						<div class="list-curators by-country">
 
 							
-							<div class="grid-x small-up-1 medium-up-3 large-up-4  list-curators text-center">
+							<div class="grid-x small-up-1 medium-up-3 large-up-6  list-curators text-center">
 							
-								<div class="cell bg-black align-self-middle">
-									<h1 class="sign transform-text blue">France</h1>
+								<div class="cell bg-black align-self-middle pays">
+									<h1 class="sign transform-text ">France</h1>
 								</div>
 								
 								<div class="cell">
@@ -308,10 +305,10 @@ get_header();
 
 							</div>
 							
-							<div class="grid-x small-up-1 medium-up-3 large-up-4  list-curators text-center">
+							<div class="grid-x small-up-1 medium-up-3 large-up-6  list-curators text-center">
 							
-								<div class="cell bg-black align-self-middle">
-									<h1 class="sign transform-text blue">Royaume-Uni</h1>
+								<div class="cell bg-black align-self-middle  pays">
+									<h1 class="sign transform-text">Royaume-Uni</h1>
 								</div>
 								
 								<div class="cell">
@@ -458,10 +455,6 @@ get_header();
 				</div>
 			</div>
 
-
-			<div class="cell medium-4 bg-zigouigoui">
-				<?php get_sidebar(); ?>
-			</div>
 
 		</div>
 	</div>

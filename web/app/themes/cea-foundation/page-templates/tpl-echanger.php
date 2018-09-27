@@ -112,7 +112,7 @@ $cea_user = new cea_user($user->ID);
                 set_query_var('groupeid', $groupeid);
                 get_template_part('template-parts/echanger/comment-part', "groupeid");
                 ?>
-                <?php // get_template_part('template-parts/echanger/video-part'); ?>
+
             </div>
 
 
@@ -129,9 +129,14 @@ $cea_user = new cea_user($user->ID);
     </div>
 
     <div class="reveal" id="mydropmodal" data-reveal>
+        <div class="editmode" style="display:none;">
+            <input type="text" id="com_editor" value="" />
+        </div>
         <form id="ceadrop" class="dropzone">
         </form>
     </div>
+
+  
 
 
 <?php endwhile; ?>

@@ -47,6 +47,21 @@ get_header(); ?>
 			
 		</div>
 		<div class="cell medium-4 border-left">
+		<select name="event-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> 
+    <option value=""><?php echo esc_attr(__('Select Category')); ?></option> 
+
+    <?php 
+        $option = '<option value="' . get_option('home') . '/category/">All Categories</option>'; // change category to your custom page slug
+        $categories = get_categories(); 
+        foreach ($categories as $category) {
+            $option .= '<option value="'.get_option('home').'/category/'.$category->slug.'">';
+            $option .= $category->cat_name;
+            $option .= ' ('.$category->category_count.')';
+            $option .= '</option>';
+        }
+        echo $option;
+    ?>
+</select>
 			<?php get_sidebar(); ?>
 		</div>
 

@@ -123,4 +123,16 @@ jQuery(document).ready(function ($) {
             }
         }
     });
+    
+    
+    $(document).on('click','.del_com',function(){
+        
+        var id = $(this).data('comid');
+        var r = confirm($(this).data('txt'));
+        if (r == true) {
+              $(document).find('.dacom-'+id).remove();
+        } 
+     
+       
+    });
 });

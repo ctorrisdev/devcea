@@ -40,7 +40,6 @@ function register_cpt() {
 
 require('includes/users.php');
 require('includes/class-user.php');
-require('includes/wall.php');
 require('includes/curator.php');
 
 if (function_exists('acf_add_options_page')) {
@@ -51,10 +50,10 @@ if (function_exists('acf_add_options_page')) {
 function add_scripts() {
     global $plugs_version;
     
-    wp_enqueue_style('cea-plugin-css-front', plugin_dir_url(__FILE__) . '/front.css',null,$plugs_version);
+    wp_enqueue_style('cea-plugin-css-front',get_stylesheet_directory_uri() . '/css/front.css',null,$plugs_version);
 
-    wp_enqueue_script('dropzone', plugin_dir_url(__FILE__) . '/js/dropzone.js', array('jquery'));
-    wp_enqueue_script('cea-front-script', plugin_dir_url(__FILE__) . '/js/front.js', array('jquery','dropzone'), $plugs_version, true);
+    wp_enqueue_script('dropzone',get_stylesheet_directory_uri() . '/js/dropzone.js', array('jquery'));
+    wp_enqueue_script('cea-front-script',get_stylesheet_directory_uri() . '/js/front.js', array('jquery','dropzone'), $plugs_version, true);
     wp_localize_script('cea-front-script', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
     
 }
@@ -63,7 +62,7 @@ add_action('wp_enqueue_scripts', 'add_scripts');
 
 function load_custom_wp_admin_style() {
     global $plugs_version;
-    wp_enqueue_style('cea-plugin-css', plugin_dir_url(__FILE__) . '/css.css',null,$plugs_version);
+    wp_enqueue_style('cea-plugin-css',get_stylesheet_directory_uri() . '/css/admin_css.css',null,$plugs_version);
 }
 
 add_action('admin_enqueue_scripts', 'load_custom_wp_admin_style');

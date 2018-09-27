@@ -35,7 +35,7 @@
 		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
 	<?php endif; ?>
 
-<?php get_template_part( 'template-parts/menu_drag' ); ?>
+<?php //get_template_part( 'template-parts/menu_drag' ); ?>
 	<header class="site-header" role="banner">
 		<div class="site-title-bar title-bar" <?php foundationpress_title_bar_responsive_toggle(); ?>>
 			<div class="title-bar-left  text-center">
@@ -50,6 +50,8 @@
 
 <?php
 if ( is_front_page() ) {
+
+get_template_part('template-parts/menu_drag');
 
 } else {
     

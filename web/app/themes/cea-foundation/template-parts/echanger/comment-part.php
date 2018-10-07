@@ -1,12 +1,19 @@
-<?php ?>
+<?php
+// test
+ ?>
 <div class="echanger-part grid-container full">
     <div class="grid-x grid-padding-x grid-padding-y" >
         <!-- nouveau commentaire -->
+        
+        <?php 
+        $user = new cea_user(get_current_user_id());        
+        if($user->is_group_autorized($groupeid)) :
+        ?>
         <div class="cell">    
             <div class="media-object">
                 <div class="input-group">
                     <span class="input-group-label"><i class="la la-lg la-comment"></i></span>
-                    <input class="input-group-field new_wall_post_content" type="text">
+                    <input class="input-group-field new_wall_post_content" type="text" placeholder="<?php _e('Votre commentaire',''); ?>">
                     <div class="input-group-button">
                         <button alt="edit" type="submit" class="button hollow submit_wall_post" 
                                 data-groupe="<?= $groupeid; ?>"
@@ -14,7 +21,7 @@
                                 >
                             <i class="la la-lg la-pencil"></i>
                         </button>
-											<button class="button hollow dropmodalbutton" data-open="mydropmodal"><i class="la la-lg la-paperclip"></i> <?= __('Ajouter fichiers'); ?></button>
+                        <button class="button hollow dropmodalbutton" data-open="mydropmodal"><i class="la la-lg la-paperclip"></i> <span class="show-for-sr"><?php _e('Ajouter fichiers',''); ?></span></button>
 
                     </div>
                 </div>
@@ -22,8 +29,8 @@
             <div class="instruct">
                 <?= __('Pour poster une vidéo Youtube, simplement poster l\'URL'); ?>
             </div>
-           
         </div>
+        <?php endif; ?>
         <!-- fin nouveau commentaire -->
 
 

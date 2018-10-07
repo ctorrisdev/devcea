@@ -10,6 +10,10 @@ class cea_user {
     public $profil;
 
     function __construct($id) { //accept int OR login
+        if(!$id || is_null($id)){
+            
+            return false;
+        }
         if(!is_int($id)){
             $profil = get_user_by('login', $id);
             $id = $profil->ID;
@@ -24,7 +28,9 @@ class cea_user {
         if ($json) {
             $this->groupes = json_decode($json);
         }
+        if($this->groupes)
         foreach ($this->groupes as $key => $id_groupe) {
+            if(is_array($this->groupes))
             $this->groupes[$key] = intval($id_groupe);
         }
     }
@@ -53,6 +59,20 @@ class cea_user {
         }
         return(false);
     }
+    
+    
+    function is_group_autorized($groupeid){
+        $user = get_user_by('id',$this->id);
+        if($this->id && (!$groupeid 
+                || $this->is_in_group($groupeid) 
+                || in_array('administrator', (array) $user->roles) 
+                || in_array('admin_cea', (array) $user->roles))
+                ){
+            return(true);
+        }
+        return(false);
+    }
+    
 
     function save() {
         $json = json_encode($this->groupes);

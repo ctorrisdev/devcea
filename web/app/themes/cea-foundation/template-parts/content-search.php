@@ -10,7 +10,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" class="cell post-search" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" class="cell post-search bg-blanc text-center" <?php post_class(); ?>>
 	<header>
 	<?php
 	if ( is_single() ) {
@@ -40,16 +40,10 @@ if ( has_tag('11') ) {
 		} ?>
 		
 	</div>
-	<?php foundationpress_entry_meta(); ?>
+	<?php //foundationpress_entry_meta(); ?>
+	<!--
 	<footer>
-		<?php
-			wp_link_pages(
-				array(
-					'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ),
-					'after'  => '</p></nav>',
-				)
-			);
-		?>
 		<?php //$tag = get_the_tags(); if ( $tag ) { ?><p><?php //the_tags(); ?></p><?php //} ?>
 	</footer>
+	-->
 </article>

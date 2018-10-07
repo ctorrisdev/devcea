@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="grid-container full">
     
-    	<div class="grid-x grid-padding-x grid-padding-y align-middle border-top">
+    	<div class="grid-x grid-padding-x grid-padding-y align-middle bg-black">
     
 	    	<div class="cell small-6 medium-4 align-self-middle small-order-2 medium-order-1">
 
@@ -66,15 +66,15 @@
 <div class="bandeau">		
 	<nav style="display:none">
 		<ul class="menu horizontal" style="display: flex;justify-content: space-around;">
-		<li><a href="#">découvrir</a></li>
+		<li><a href="#e">découvrir</a></li>
 		<li class="separator"></li>
-		<li><a href="#">échanger</a></li>
+		<li><a href="#e">échanger</a></li>
 		<li class="separator"></li>
-		<li><a href="#">curater</a></li>
+		<li><a href="#e">curater</a></li>
 		<li class="separator"></li>
-		<li><a href="#">s’informer</a></li>
+		<li><a href="#e">s’informer</a></li>
 		<li class="separator"></li>
-		<li><a href="#">structurer</a></li>
+		<li><a href="#e">structurer</a></li>
 		</ul>
 	</nav>
 		<marquee height="30" onmouseover="this.setAttribute('scrollamount', 0, 0);" onmouseout="this.setAttribute('scrollamount', 5, 0);" scrolldelay="60" direction="left" behavior="scroll" scrollamount="5">	

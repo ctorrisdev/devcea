@@ -12,7 +12,7 @@
 	<div class="input-group">
 		<input type="text" class="input-group-field" value="" name="s" id="s" placeholder="<?php esc_attr_e( 'Search', 'foundationpress' ); ?>">
 		<div class="input-group-button">
-			<input type="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'foundationpress' ); ?>" class="button">
+			<button class="button" type="submit" id="searchsubmit"><i class="la la-lg la-search"></i></button>
 		</div>
 	</div>
 </form>

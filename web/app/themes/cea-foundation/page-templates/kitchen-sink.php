@@ -148,28 +148,28 @@ get_header(); ?>
                     <h2 id="accordion-menu" class="docs-heading" data-magellan-target="accordion-menu"><a href="#accordion-menu"></a>Accordion Menu</h2>
                     <ul class="vertical menu" data-accordion-menu>
                         <li>
-                            <a href="#">Item 1</a>
+                            <a href="#e">Item 1</a>
                             <ul class="menu vertical nested is-active">
                                 <li>
-                                    <a href="#">Item 1A</a>
+                                    <a href="#e">Item 1A</a>
                                     <ul class="menu vertical nested">
-                                        <li><a href="#">Item 1Ai</a></li>
-                                        <li><a href="#">Item 1Aii</a></li>
-                                        <li><a href="#">Item 1Aiii</a></li>
+                                        <li><a href="#e">Item 1Ai</a></li>
+                                        <li><a href="#e">Item 1Aii</a></li>
+                                        <li><a href="#e">Item 1Aiii</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Item 1B</a></li>
-                                <li><a href="#">Item 1C</a></li>
+                                <li><a href="#e">Item 1B</a></li>
+                                <li><a href="#e">Item 1C</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#">Item 2</a>
+                            <a href="#e">Item 2</a>
                             <ul class="menu vertical nested">
-                                <li><a href="#">Item 2A</a></li>
-                                <li><a href="#">Item 2B</a></li>
+                                <li><a href="#e">Item 2A</a></li>
+                                <li><a href="#e">Item 2B</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Item 3</a></li>
+                        <li><a href="#e">Item 3</a></li>
                     </ul>
                     <hr>
 
@@ -185,8 +185,8 @@ get_header(); ?>
                     <h2 id="breadcrumbs" class="docs-heading" data-magellan-target="breadcrumbs"><a href="#breadcrumbs"></a>Breadcrumbs</h2>
                     <nav aria-label="You are here:" role="navigation">
                         <ul class="breadcrumbs">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Features</a></li>
+                            <li><a href="#e">Home</a></li>
+                            <li><a href="#e">Features</a></li>
                             <li class="disabled">Gene Splicing</li>
                             <li><span class="show-for-sr">Current: </span> Cloning</li>
                         </ul>
@@ -195,11 +195,11 @@ get_header(); ?>
 
                     <!-- Button -->
                     <h2 id="button" class="docs-heading" data-magellan-target="button"><a href="#button"></a>Button</h2>
-                        <a class="button primary" href="#">Primary</a>
-                        <a class="button secondary" href="#">Secondary</a>
-                        <a class="button success" href="#">Success</a>
-                        <a class="button alert" href="#">Alert</a>
-                        <a class="button warning" href="#">Warning</a>
+                        <a class="button primary" href="#e">Primary</a>
+                        <a class="button secondary" href="#e">Secondary</a>
+                        <a class="button success" href="#e">Success</a>
+                        <a class="button alert" href="#e">Alert</a>
+                        <a class="button warning" href="#e">Warning</a>
 
                         <br />
                         <!-- Buttons (actions) -->
@@ -207,11 +207,11 @@ get_header(); ?>
                         <button type="button" class="alert button">Delete</button>
 
                         <br />
-                        <a class="tiny button" href="#">So Tiny</a>
-                        <a class="small button" href="#">So Small</a>
-                        <a class="button" href="#">So Basic</a>
-                        <a class="large button" href="#">So Large</a>
-                        <a class="expanded button" href="#">Such Expand</a>
+                        <a class="tiny button" href="#e">So Tiny</a>
+                        <a class="small button" href="#e">So Small</a>
+                        <a class="button" href="#e">So Basic</a>
+                        <a class="large button" href="#e">So Large</a>
+                        <a class="expanded button" href="#e">Such Expand</a>
 
                         <div class="button-group">
                             <a class="button">One</a>
@@ -225,37 +225,37 @@ get_header(); ?>
                         <div class="callout">
                             <h5>This is a default callout.</h5>
                             <p>It has an easy to override visual style, and is appropriately subdued.</p>
-                            <a href="#">It's dangerous to go alone, take this.</a>
+                            <a href="#e">It's dangerous to go alone, take this.</a>
                         </div>
 
                         <div class="callout primary">
                             <h5>This is a primary callout</h5>
                             <p>It has an easy to override visual style, and is appropriately subdued.</p>
-                            <a href="#">It's dangerous to go alone, take this.</a>
+                            <a href="#e">It's dangerous to go alone, take this.</a>
                         </div>
 
                         <div class="callout secondary">
                             <h5>This is a secondary callout</h5>
                             <p>It has an easy to override visual style, and is appropriately subdued.</p>
-                            <a href="#">It's dangerous to go alone, take this.</a>
+                            <a href="#e">It's dangerous to go alone, take this.</a>
                         </div>
 
                         <div class="callout success">
                             <h5>This is a success callout</h5>
                             <p>It has an easy to override visual style, and is appropriately subdued.</p>
-                            <a href="#">It's dangerous to go alone, take this.</a>
+                            <a href="#e">It's dangerous to go alone, take this.</a>
                         </div>
 
                         <div class="callout warning">
                             <h5>This is a warning callout</h5>
                             <p>It has an easy to override visual style, and is appropriately subdued.</p>
-                            <a href="#">It's dangerous to go alone, take this.</a>
+                            <a href="#e">It's dangerous to go alone, take this.</a>
                         </div>
 
                         <div class="callout alert">
                             <h5>This is an alert callout</h5>
                             <p>It has an easy to override visual style, and is appropriately subdued.</p>
-                            <a href="#">It's dangerous to go alone, take this.</a>
+                            <a href="#e">It's dangerous to go alone, take this.</a>
                         </div>
                     <hr>
 
@@ -279,9 +279,9 @@ get_header(); ?>
                                 <h4>Menus</h4>
                                 <p>Cards play nicely with menus too! Give them a try.</p>
                                 <ul class="menu simple">
-                                    <li><a href="#">One</a></li>
-                                    <li><a href="#">Two</a></li>
-                                    <li><a href="#">Three</a></li>
+                                    <li><a href="#e">One</a></li>
+                                    <li><a href="#e">Two</a></li>
+                                    <li><a href="#e">Three</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -301,7 +301,7 @@ get_header(); ?>
                             <div class="card-content">
                                 <h4>Buttons!</h4>
                                 <p>Who doesn't love a good button? Buttons work in all of their forms too.</p>
-                                <a class="button" href="#">I'm a button</a>
+                                <a class="button" href="#e">I'm a button</a>
                             </div>
                         </div>
 
@@ -325,7 +325,7 @@ get_header(); ?>
                             <img src="https://placeimg.com/300/200/animals">
                             <div class="card-content">
                                 <p>The utility classes like .text-center work great too.</p>
-                                <a class="button" href="#">Click me</a>
+                                <a class="button" href="#e">Click me</a>
                             </div>
                         </div>
                     </div>
@@ -345,42 +345,42 @@ get_header(); ?>
                     <h2 id="drilldown-menu" class="docs-heading" data-magellan-target="drilldown-menu"><a href="#drilldown-menu"></a>Drilldown Menu</h2>
                         <ul class="vertical menu" data-drilldown style="width: 200px" id="m1">
                             <li>
-                                <a href="#">Item 1</a>
+                                <a href="#e">Item 1</a>
                                 <ul class="vertical menu" id="m2">
                                     <li>
-                                        <a href="#">Item 1A</a>
+                                        <a href="#e">Item 1A</a>
                                         <ul class="vertical menu" id="m3">
-                                            <li><a href="#">Item 1Aa</a></li>
-                                            <li><a href="#">Item 1Ba</a></li>
-                                            <li><a href="#">Item 1Ca</a></li>
-                                            <li><a href="#">Item 1Da</a></li>
-                                            <li><a href="#">Item 1Ea</a></li>
+                                            <li><a href="#e">Item 1Aa</a></li>
+                                            <li><a href="#e">Item 1Ba</a></li>
+                                            <li><a href="#e">Item 1Ca</a></li>
+                                            <li><a href="#e">Item 1Da</a></li>
+                                            <li><a href="#e">Item 1Ea</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">Item 1B</a></li>
-                                    <li><a href="#">Item 1C</a></li>
-                                    <li><a href="#">Item 1D</a></li>
-                                    <li><a href="#">Item 1E</a></li>
+                                    <li><a href="#e">Item 1B</a></li>
+                                    <li><a href="#e">Item 1C</a></li>
+                                    <li><a href="#e">Item 1D</a></li>
+                                    <li><a href="#e">Item 1E</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">Item 2</a>
+                                <a href="#e">Item 2</a>
                                 <ul class="vertical menu">
-                                    <li><a href="#">Item 2A</a></li>
-                                    <li><a href="#">Item 2B</a></li>
-                                    <li><a href="#">Item 2C</a></li>
-                                    <li><a href="#">Item 2D</a></li>
-                                    <li><a href="#">Item 2E</a></li>
+                                    <li><a href="#e">Item 2A</a></li>
+                                    <li><a href="#e">Item 2B</a></li>
+                                    <li><a href="#e">Item 2C</a></li>
+                                    <li><a href="#e">Item 2D</a></li>
+                                    <li><a href="#e">Item 2E</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">Item 3</a>
+                                <a href="#e">Item 3</a>
                                 <ul class="vertical menu">
-                                    <li><a href="#">Item 3A</a></li>
-                                    <li><a href="#">Item 3B</a></li>
-                                    <li><a href="#">Item 3C</a></li>
-                                    <li><a href="#">Item 3D</a></li>
-                                    <li><a href="#">Item 3E</a></li>
+                                    <li><a href="#e">Item 3A</a></li>
+                                    <li><a href="#e">Item 3B</a></li>
+                                    <li><a href="#e">Item 3C</a></li>
+                                    <li><a href="#e">Item 3D</a></li>
+                                    <li><a href="#e">Item 3E</a></li>
                                 </ul>
                             </li>
                             <li><a href='#'> Item 4</a></li>
@@ -393,7 +393,7 @@ get_header(); ?>
                             <li>
                                 <a>Item 1</a>
                                 <ul class="menu">
-                                    <li><a href="#">Item 1A Loooong</a></li>
+                                    <li><a href="#e">Item 1A Loooong</a></li>
                                     <li>
                                         <a href='#'> Item 1 sub</a>
                                         <ul class='menu'>
@@ -414,17 +414,17 @@ get_header(); ?>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">Item 1B</a></li>
+                                    <li><a href="#e">Item 1B</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="#">Item 2</a>
+                                <a href="#e">Item 2</a>
                                 <ul class="menu">
-                                    <li><a href="#">Item 2A</a></li>
-                                    <li><a href="#">Item 2B</a></li>
+                                    <li><a href="#e">Item 2A</a></li>
+                                    <li><a href="#e">Item 2B</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Item 3</a></li>
+                            <li><a href="#e">Item 3</a></li>
                             <li><a href='#'>Item 4</a></li>
                         </ul>
                     <hr>
@@ -566,17 +566,17 @@ get_header(); ?>
                     <!-- Menu -->
                     <h2 id="menu" class="docs-heading" data-magellan-target="menu"><a href="#menu"></a>Menu</h2>
                     <ul class="menu">
-                        <li><a href="#">One</a></li>
-                        <li><a href="#">Two</a></li>
-                        <li><a href="#">Three</a></li>
-                        <li><a href="#">Four</a></li>
+                        <li><a href="#e">One</a></li>
+                        <li><a href="#e">Two</a></li>
+                        <li><a href="#e">Three</a></li>
+                        <li><a href="#e">Four</a></li>
                     </ul>
 
                     <ul class="menu icon-top">
-                        <li><a href="#"><i class="fi-list"></i> <span>One</span></a></li>
-                        <li><a href="#"><i class="fi-list"></i> <span>Two</span></a></li>
-                        <li><a href="#"><i class="fi-list"></i> <span>Three</span></a></li>
-                        <li><a href="#"><i class="fi-list"></i> <span>Four</span></a></li>
+                        <li><a href="#e"><i class="fi-list"></i> <span>One</span></a></li>
+                        <li><a href="#e"><i class="fi-list"></i> <span>Two</span></a></li>
+                        <li><a href="#e"><i class="fi-list"></i> <span>Three</span></a></li>
+                        <li><a href="#e"><i class="fi-list"></i> <span>Four</span></a></li>
                     </ul>
                     <hr>
 
@@ -643,13 +643,13 @@ get_header(); ?>
                     <ul class="pagination" role="navigation" aria-label="Pagination">
                         <li class="disabled">Previous <span class="show-for-sr">page</span></li>
                         <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
-                        <li><a href="#" aria-label="Page 2">2</a></li>
-                        <li><a href="#" aria-label="Page 3">3</a></li>
-                        <li><a href="#" aria-label="Page 4">4</a></li>
+                        <li><a href="#e" aria-label="Page 2">2</a></li>
+                        <li><a href="#e" aria-label="Page 3">3</a></li>
+                        <li><a href="#e" aria-label="Page 4">4</a></li>
                         <li class="ellipsis" aria-hidden="true"></li>
-                        <li><a href="#" aria-label="Page 12">12</a></li>
-                        <li><a href="#" aria-label="Page 13">13</a></li>
-                        <li><a href="#" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
+                        <li><a href="#e" aria-label="Page 12">12</a></li>
+                        <li><a href="#e" aria-label="Page 13">13</a></li>
+                        <li><a href="#e" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
                     </ul>
                     <hr>
 
@@ -858,10 +858,10 @@ get_header(); ?>
                     <p><button class="button small primary" type="button" data-toggle="menuBar">Toggle width</button></p>
 
                     <ul class="menu" id="menuBar" data-toggler=".expanded">
-                        <li><a href="#">One</a></li>
-                        <li><a href="#">Two</a></li>
-                        <li><a href="#">Three</a></li>
-                        <li><a href="#">Four</a></li>
+                        <li><a href="#e">One</a></li>
+                        <li><a href="#e">Two</a></li>
+                        <li><a href="#e">Three</a></li>
+                        <li><a href="#e">Four</a></li>
                     </ul>
                     <hr>
 
@@ -877,15 +877,15 @@ get_header(); ?>
                             <ul class="dropdown menu" data-dropdown-menu>
                                 <li class="menu-text">Site Title</li>
                                 <li class="has-submenu">
-                                    <a href="#">One</a>
+                                    <a href="#e">One</a>
                                     <ul class="submenu menu vertical" data-submenu>
-                                        <li><a href="#">One</a></li>
-                                        <li><a href="#">Two</a></li>
-                                        <li><a href="#">Three</a></li>
+                                        <li><a href="#e">One</a></li>
+                                        <li><a href="#e">Two</a></li>
+                                        <li><a href="#e">Three</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Two</a></li>
-                                <li><a href="#">Three</a></li>
+                                <li><a href="#e">Two</a></li>
+                                <li><a href="#e">Three</a></li>
                             </ul>
                         </div>
 

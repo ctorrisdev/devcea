@@ -24,8 +24,7 @@ function start_new_crea() {
     $autostart = filter_input(INPUT_GET, "ccautostart", FILTER_SANITIZE_STRING);
     if ($autostart) {
         global $plugs_version;
-
-        wp_enqueue_script('cc_autostart', plugin_dir_url(__FILE__) . '../js/cc_autostart.js', array('jquery'),$plugs_version);
+        wp_enqueue_script('cc_autostart', get_stylesheet_directory_uri() . '/js/cc_autostart.js', array('jquery'),$plugs_version);
     }
 }
 

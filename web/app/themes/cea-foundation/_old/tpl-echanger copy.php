@@ -29,15 +29,15 @@ get_header(); ?>
 
 
 						<div class="stacked-for-small small expanded button-group">
-							<a href="#" class="button hollow"><?php _e('rejoindre le groupe',''); ?></a>
-							<a href="#" class="button hollow"><?php _e('quitter le groupe',''); ?></a>
+							<a href="#e" class="button hollow"><?php _e('rejoindre le groupe',''); ?></a>
+							<a href="#e" class="button hollow"><?php _e('quitter le groupe',''); ?></a>
 						</div>
 					</div>
 					
 					
 					<!-- formulaire recherche groupe -->
 					<div class="cell bg-blanc border-bottom">
-						<a href="#" class="button expanded">cr&eacute;er un nouveau groupe</a>
+						<a href="#e" class="button expanded">cr&eacute;er un nouveau groupe</a>
 						
 						<form>
 							<div class="input-group">

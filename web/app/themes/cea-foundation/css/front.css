@@ -396,7 +396,7 @@
 
 
 .subcomment {
-    margin-left : 50px;
+    margin-left:2.9375rem;;
 }
 
 .del_com, .edit_com{
@@ -416,4 +416,13 @@
 .instruct{
     font-size:11px;
     font-style:italic;
+}
+
+.hidden{
+    display:none;
+}
+
+
+.et-fb-page-creation-card-choose_premade_layout,.et-fb-page-creation-card-clone_existing_page{
+    display:none !important;
 }

@@ -9,25 +9,50 @@ get_header(); ?>
 <div class="grid-container full">
 	<div class="grid-x">
 
-		<div class="cell medium-8 border-right">
+		<div class="cell small-12 border-right">
 			
 <div class="grid-container full">
 
 
-<div class="grid-x small-up-1 medium-up-2 large-up-4 list-pool bg-black">
+<div class="grid-x small-up-1 medium-up-3 list-pool bg-black">
+
+<div class="cell bg-blanc">
+	<div class="grid-container full">
+		<div class="grid-y grid-padding-x grid-padding-y">
+		
+		<div class="cell">
+			<h4>Titre du tableau</h4>
+		</div>
+		
+		<div class="cell grid-padding-x grid-padding-y border-top">
+		    <img src="http://www.bitumas.com/avatar.jpg" class="avatar-pool">
+			<img src="http://static.hitek.fr/img/actualite/w_wtf-44.jpg">
+		</div>
+		<div class="cell border-top">
+			 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas magni, quam mollitia voluptatum in, animi suscipit tempora ea consequuntur non nulla vitae doloremque. Eius rerum, cum earum quae eveniet odio.</p>
+		</div>
+		
+		</div>
+	</div>	
+</div>
 
   <div class="cell">
 	  <div class="card">
-		  <div class="card-divider">
+		  <div class="card-divider">	  	
 		    <h4>Titre du tableau</h4>
 		  </div>
-		  <img src="http://static.hitek.fr/img/actualite/w_wtf-44.jpg">
-		  <div class="card-section border-top">
-		    <h5>nom prenom</h5>
+		  
+		  <div class="card-section">
+		      <img src="http://www.bitumas.com/avatar.jpg" class="avatar-pool">
+		      <img src="http://static.hitek.fr/img/actualite/w_wtf-44.jpg">
+		  </div>
+		  
+		  <div class="card-section border-top">	    
 		    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas magni, quam mollitia voluptatum in, animi suscipit tempora ea consequuntur non nulla vitae doloremque. Eius rerum, cum earum quae eveniet odio.</p>
 		  </div>
 		</div>
   </div>
+
   
     <div class="cell">
 	  <div class="card">
@@ -92,9 +117,7 @@ get_header(); ?>
 </div>
 			
 		</div>
-		<div class="cell medium-4">
-			<?php get_sidebar(); ?>
-		</div>
+
 
 	</div>
 </div>

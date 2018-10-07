@@ -35,6 +35,17 @@ function register_cpt() {
         'label' => __('Créations'),
         'public' => true,
         'has_archive' => true,
+        'map_meta_cap ' => true,
+        'capabilities' => array(
+            'edit_post' => 'edit_creation',
+            'edit_posts' => 'edit_creations',
+            'edit_others_posts' => 'edit_other_creations',
+            'publish_posts' => 'publish_creations',
+            'read_post' => 'read_creation',
+            'read_private_posts' => 'read_private_creations',
+            'delete_post' => 'delete_creation',
+            'edit_published_posts' => 'edit_published_creations'
+        ),
     ));
 }
 
@@ -48,10 +59,8 @@ if (function_exists('acf_add_options_page')) {
 }
 
 function add_scripts() {
-    global $plugs_version;
-    
+    global $plugs_version;    
     wp_enqueue_style('cea-plugin-css-front',get_stylesheet_directory_uri() . '/css/front.css',null,$plugs_version);
-
     wp_enqueue_script('dropzone',get_stylesheet_directory_uri() . '/js/dropzone.js', array('jquery'));
     wp_enqueue_script('cea-front-script',get_stylesheet_directory_uri() . '/js/front.js', array('jquery','dropzone'), $plugs_version, true);
     wp_localize_script('cea-front-script', 'ajaxurl', admin_url( 'admin-ajax.php' ) );

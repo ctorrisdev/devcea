@@ -39,8 +39,8 @@ if (!function_exists('foundationpress_scripts')) :
     function foundationpress_scripts() {
 
         // Enqueue the main Stylesheet.
-        wp_enqueue_style('main-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path('app.css'), array(), '2.9', 'all');
-        wp_enqueue_style('animate-css-style', get_stylesheet_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path('animate.css'));
+        wp_enqueue_style('main-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path('app.css'), array(), '2.8', 'all');
+        //wp_enqueue_style('animate-css-style', get_stylesheet_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path('foundation.min.css'));
 
 
         wp_deregister_script('jquery');

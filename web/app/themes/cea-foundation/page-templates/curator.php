@@ -16,7 +16,7 @@ get_header();
             <?php get_template_part('template-parts/breadcrumbs-part'); ?>
             <?php get_template_part('template-parts/editor-part'); ?>		
 
-            <div class="grid-x grid-padding-x grid-padding-y text-center" style="border-bottom: 1px solid #000;">
+            <div class="grid-x grid-padding-x grid-padding-y text-center border-bottom">
                 <div class="cell curator_name">
                     <h1>Damien AIRAULT <small>Membres du Conseil d'administration de C-E-A
                         </small></h1>

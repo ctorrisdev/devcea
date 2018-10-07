@@ -6,7 +6,7 @@
     <ul class="vertical menu text-center" data-drilldown  data-animate-height="true" style="max-width: 250px;">
 
         <li>
-            <a href="#">D&eacute;couvrir</a>
+            <a href="#e">D&eacute;couvrir</a>
             <ul class="vertical menu">
                 <li><a href="<?= get_home_url(); ?>/decouvrir/actualites/">actualit&eacute;s</a></li>
                 <li><a href="<?= get_home_url(); ?>/decouvrir/archives/">archives</a></li>
@@ -15,7 +15,7 @@
         <li><a href="<?= get_home_url(); ?>/echanger/">&eacutechanger</a></li>
         <li><a href="<?= get_home_url(); ?>/curater/">curater</a></li>
         <li>
-            <a href="#">S'informer</a>
+            <a href="#e">S'informer</a>
             <ul class="vertical menu">
                 <li><a href="<?= get_home_url(); ?>/sinformer/annuaire/">annuaire</a></li>
                 <li><a href="<?= get_home_url(); ?>/sinformer/ressources/">ressources</a></li>

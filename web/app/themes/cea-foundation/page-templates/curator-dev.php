@@ -29,7 +29,7 @@ if (!$profil) {
         <div class="cell medium-12 large-8">
 
 
-            <?php get_template_part('template-parts/breadcrumbs-part'); ?>
+            <?php //get_template_part('template-parts/breadcrumbs-part'); ?>
             <?php
             if ($profil->ID == $user->ID) {
                 get_template_part('template-parts/editor-part');
@@ -38,7 +38,7 @@ if (!$profil) {
 
             <div class="grid-x grid-padding-x grid-padding-y text-center" style="border-bottom: 1px solid #000;">
                 <div class="cell curator_name">
-                    <h1><?= $profil->user_nicename; ?><small><?= $profil->fonction; ?>
+                    <h1><?= $profil->user_nicename; ?><small><?= $profil->titre; ?>
                         </small></h1>
                 </div>
             </div>
@@ -94,33 +94,38 @@ if (!$profil) {
             if ($posts) {
                 ?>
                 <div class="grid-x grid-padding-x grid-padding-y padding-x padding-y" >
-                    <div class="orbit text-center bg-black padding-y" role="region" aria-label="news" data-options="data-timer-delay:3000;" data-orbit="bqms3p-orbit" data-events="resize">
+                    <div class="orbit text-center bg-black padding-y" role="region" aria-label="news" data-options="data-timer-delay:3000;" data-orbit data-events="resize">
                         <div class="orbit-wrapper">
                             <h3><?php _e('derniers articles', ''); ?></h3>
 
-                            <ul tabindex="0" class="orbit-container" style="height: 892.39px;">
+                            <ul tabindex="0" class="orbit-container">
                                 <?php
                                 foreach ($posts as $post) {
                                     ?>
-                                    <li class="orbit-slide is-active" aria-live="polite" style="top: 0px; display: block; position: relative; transition-duration: 0s;" data-slide="0">
+                                    <li class="orbit-slide" aria-live="polite" style="top: 0px; display: block; position: relative; transition-duration: 0s;">
                                         <div class="slide-text slide_news" style='background: url("<?= get_template_directory_uri(); ?>//images/en_actu.svg") no-repeat center 5em / 400px;'>
                                             <div class="h2 serif"><?= $post->post_title; ?></div>
-                                            <?= $post->post_content; ?>
+                                            <p><?= $post->post_excerpt; ?></p>
                                             <a class="button hollow" href="<?= get_the_permalink($post->ID); ?>">Lire l'article</a>
                                         </div>
                                     </li>
 
-
-                                <?php }
-                                ?>
+                                <?php } ?>
                             </ul>
 
                         </div>
-                        <!--
+                        
                         <nav class="orbit-bullets">
-                            <button class="is-active" data-slide="0"><span class="show-for-sr">1</span><span class="show-for-sr">0</span></button>
-                            <button data-slide="1"><span class="show-for-sr">2</span></button>
-                        </nav> -->
+                            <?php
+                            $i = 0;
+                            foreach ($posts as $post) {
+                            ?>
+                            <button class="" data-slide="<?= $i; ?>"><span class="show-for-sr"><?= $i; ?></span></button>
+                            <?php
+                            $i++;
+                            }
+                            ?>
+                        </nav>
                     </div>
 
                 </div>

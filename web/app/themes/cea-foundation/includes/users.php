@@ -9,10 +9,68 @@ function cea_clean_roles() {
     remove_role('subscriber');
     remove_role('commissaire');
     remove_role('curator');
+    
+    
+     $role = get_role('administrator');
+    $role->add_cap( 'edit_creation' ); 
+    $role->add_cap( 'edit_creations' );    
+    $role->add_cap( 'publish_creations' ); 
+    $role->add_cap( 'delete_creation' );
+
+    
+
+    add_role('curator', __('Commissaire'), array(
+       
+        'edit_files' => true,
+       
+        'manage_links' => true,
+        'upload_files' => true,
+        
+        'unfiltered_html' => true,
+        'edit_posts' => true,
+     //  'edit_others_posts' => true,
+        'edit_published_posts' => true,
+        'publish_posts' => true,
+  
+        'read' => true,
+        
+        'unfiltered_upload' => true,
+       
+        'edit_creation' => true,
+        'edit_creations' => true,
+        'publish_creations' => true,
+        'delete_creation' => true,
+        'edit_published_creations' => true,
+            )
+    );
+
+
+    add_role('admin_cea', __('Admin CEA'), array(
+        'read' => true,
+        'edit_posts' => true,
+        'delete_post' => true,
+            )
+    );
+    
+
+    
+    add_role('member', __('Membre actif'), array(
+        'read' => true,
+        'edit_posts' => false,
+        'delete_post' => false,
+            )
+    );
+    add_role('member_curator', __('Membre Commissaire Européen'), array(
+        'read' => true,
+        'edit_posts' => false,
+        'delete_post' => false,
+            )
+    );
+    
+    
 }
 
 register_activation_hook(__FILE__, 'cea_clean_roles');
-
 
 function wps_change_role_name() {
     global $wp_roles;
@@ -22,35 +80,15 @@ function wps_change_role_name() {
     $wp_roles->role_names['administrator'] = __('Admin Système');
     $wp_roles->roles['admin_cea']['name'] = __('Admin CEA');
     $wp_roles->role_names['admin_cea'] = __('Admin CEA');
+     
 }
 
 add_action('init', 'wps_change_role_name');
 
 function cea_roles() {
-   add_role('curator', __('Commissaire'), array(
-        'read' => true, 
-        'edit_posts' => true,
-        'delete_posts' => false, 
-            )
-    );
-   add_role('admin_cea', __('Admin CEA'), array(
-        'read' => true, 
-        'edit_posts' => true,
-        'delete_posts' => true, 
-            )
-    );
-   add_role('member', __('Membre actif'), array(
-        'read' => true, 
-        'edit_posts' => true,
-        'delete_posts' => true, 
-            )
-    );
-   add_role('member_curator', __('Membre Commissaire'), array(
-        'read' => true, 
-        'edit_posts' => true,
-        'delete_posts' => true, 
-            )
-    );
+  // cea_clean_roles();
+
+    
 }
 
 add_action('init', 'cea_roles');
@@ -58,7 +96,7 @@ add_action('init', 'cea_roles');
 
 add_action('admin_init', 'my_remove_menu_pages');
 
-function my_remove_menu_pages() {    
+function my_remove_menu_pages() {
     if (current_user_can('curator')) {
         remove_menu_page('tools.php'); // Tools
         remove_menu_page('users.php'); // Users
@@ -73,11 +111,16 @@ function my_remove_menu_pages() {
         remove_menu_page('edit.php?post_type=groupes');
     }
     remove_menu_page('edit-comments.php');
-   
 }
 
 
-
-
-
-
+add_filter( 'ajax_query_attachments_args', 'wpb_show_current_user_attachments' );
+ 
+function wpb_show_current_user_attachments( $query ) {
+    $user_id = get_current_user_id();
+    if ( $user_id && !current_user_can('activate_plugins') && !current_user_can('edit_others_posts
+') ) {
+        $query['author'] = $user_id;
+    }
+    return $query;
+} 

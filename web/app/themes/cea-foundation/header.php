@@ -53,15 +53,8 @@ if ( is_front_page() ) {
 
 get_template_part('template-parts/menu_drag');
 
-} else {
-    
-  
-get_template_part('template-parts/menu');
-  
-  
+} else {   
+get_template_part('template-parts/menu2'); 
 }
 ?>
-
-
-
 	</header>

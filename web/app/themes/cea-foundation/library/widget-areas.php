@@ -31,6 +31,18 @@ if ( ! function_exists( 'foundationpress_sidebar_widgets' ) ) :
 				'after_title'   => '</h6>',
 			)
 		);
+		
+		register_sidebar(
+			array(
+				'id'            => 'archives',
+				'name'          => __( 'archives', 'foundationpress' ),
+				'description'   => __( 'Drag widgets to this archives container', 'foundationpress' ),
+				'before_widget' => '<div id="%1$s" class="cell">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<span class="show-for-sr">',
+				'after_title'   => '</span>',
+			)
+		);
 	}
 
 	add_action( 'widgets_init', 'foundationpress_sidebar_widgets' );

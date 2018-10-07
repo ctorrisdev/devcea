@@ -15,7 +15,7 @@ get_header();
 
 					<div class="grid-x">
 						<div class="cell">
-							<ul class="tabs" data-tabs id="curators-tabs">
+							<ul class="tabs filtres-annuaire" data-tabs id="curators-tabs">
 								<li class="tabs-title is-active">
 									<a href="#panel1" aria-selected="true">
 										<?php _e('Liste par ordre alphab&eacute;tique', ''); ?>

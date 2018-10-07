@@ -27,8 +27,8 @@ get_header(); ?>
 
 
 						<div class="stacked-for-small small expanded button-group">
-							<a href="#" class="button hollow"><i class="la la-3x la-user-plus"></i> <span class="show-for-sr"><?php _e('rejoindre',''); ?></span></a>
-							<a href="#" class="button hollow"><i class="la la-3x la-user-times"></i> <span class="show-for-sr"><?php _e('quitter',''); ?></span></a>
+							<a href="#e" class="button hollow"><i class="la la-3x la-user-plus"></i> <span class="show-for-sr"><?php _e('rejoindre',''); ?></span></a>
+							<a href="#e" class="button hollow"><i class="la la-3x la-user-times"></i> <span class="show-for-sr"><?php _e('quitter',''); ?></span></a>
 						</div>						
 						
 					</div>

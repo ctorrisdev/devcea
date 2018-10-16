@@ -37,7 +37,7 @@ if ( ! function_exists( 'foundationpress_sidebar_widgets' ) ) :
 				'id'            => 'archives',
 				'name'          => __( 'archives', 'foundationpress' ),
 				'description'   => __( 'Drag widgets to this archives container', 'foundationpress' ),
-				'before_widget' => '<div id="%1$s" class="cell">',
+				'before_widget' => '<div id="%1$s" class="archives-widget cell">',
 				'after_widget'  => '</div>',
 				'before_title'  => '<span class="show-for-sr">',
 				'after_title'   => '</span>',

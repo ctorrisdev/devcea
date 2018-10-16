@@ -33,17 +33,25 @@ add_action('wp', 'start_new_crea');
 function display_shortcode_curator_page() {    
     $user = wp_get_current_user();
     if (!in_array('curator', (array) $user->roles) && !in_array('administrator', (array) $user->roles)) {
-        return(__('Seul les commissaires peuvent utiliser l\'outil de création curatoriale'));
+        return(__('Seul les commissaires peuvent utiliser l\'outil de création curatoriale','cea'));
     }
     $form = '
-        <div class="curator_menu">    
-            <a href="#a">' . __('Commencer une nouvelle création curatoriale') . '</a>
+			<div class="grid-container full text-center ">
+			<div class="grid-x align-center">
+        <div class="curator_menu cell medium-6">    
+            <a href="#a">' . __('Commencer une nouvelle création curatoriale','cea') . '</a>
             <form method="post">
-                ' . __('Titre de la création') . '
-                <input required type="text" name="start_creation_curatoriale" />
-                <input class="button hollow" type="submit" value="' . __('Demarrer l\'éditeur visuel') . '" />
+                ' . __('Titre de la création','cea') . '
+                <div class="input-group">
+									<input required type="text" name="start_creation_curatoriale" style="margin: 0"/>
+									<div class="input-group-button">
+										<button type="submit" class="button hollow">' . __('Demarrer l\'éditeur visuel','cea') . '</button>
+									</div>
+								</div>
             </form>
-        </div>';
+        </div>
+				</div>
+			</div>';
     return($form);
 }
 

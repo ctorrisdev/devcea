@@ -20,19 +20,19 @@ add_action('init', 'register_cpt', 0);
 
 function register_cpt() {
     register_post_type('wall', array(
-        'label' => __('Echanges'),
+        'label' => __('Echanges','cea'),
         'public' => true,
         'has_archive' => true,
     ));
 
     register_post_type('groupes', array(
-        'label' => __('Groupes de Travail'),
+        'label' => __('Groupes de Travail','cea'),
         'public' => true,
         'has_archive' => true,
     ));
 
     register_post_type('creations', array(
-        'label' => __('Créations'),
+        'label' => __('Créations','cea'),
         'public' => true,
         'has_archive' => true,
         'map_meta_cap ' => true,

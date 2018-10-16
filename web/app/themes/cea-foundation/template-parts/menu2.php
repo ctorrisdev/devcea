@@ -1,17 +1,19 @@
- <header data-sticky data-options="marginTop:0;" data-check-every=-1 class="bg-blanc">
+ <header id="main_menu" data-sticky data-options="marginTop:0;" data-check-every=-1 class="bg-blanc hide-for-small">
  
          <div class="grid-container full text-center">
+					 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
             <div class="grid-x serif grid-padding-x grid-padding-y align-middle text-center logo-c-e-a">
                 <div class="cell auto" style="border-right: 1px solid #000">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/logo-c.svg" alt="C" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/logo-c.svg" alt="C" />
                 </div>
                 <div class="cell auto" style="border-right: 1px solid #000;border-left:1px solid #000">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/logo-e.svg" alt="E" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/logo-e.svg" alt="E" />
                 </div>
                 <div class="cell auto" style="border-left: 1px solid #000">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/logo-a.svg" alt="A" />
+                    <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/logo-a.svg" alt="A" />
                 </div>
             </div>
+					 </a>
         </div>
 
   		<nav class="site-navigation top-bar border-top" role="navigation" >

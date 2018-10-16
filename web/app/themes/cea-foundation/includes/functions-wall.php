@@ -86,7 +86,7 @@ function get_groupes_list() {
 
     if (!$find) {
         $posts_array = array(
-            'posts_per_page' => 5,
+            'posts_per_page' => 10,
             'post_type' => 'groupes',
         );
         $posts = get_posts($posts_array);
@@ -94,7 +94,7 @@ function get_groupes_list() {
         $posts = query_posts(array(
             'post_type' => 'groupes',
             's' => $find,
-            'posts_per_page' => 5,
+            'posts_per_page' => 10,
         ));
     }
 
@@ -104,10 +104,11 @@ function get_groupes_list() {
 
 
     if (empty($posts)) {
-        $display = __('Aucun groupe correspondant');
+        $display = __('Aucun groupe correspondant','cea');
     } else {
         foreach ($posts as $groupe) {
-            $display .= '<li><a href="/workgroups/' . $groupe->post_name . '/">' . $groupe->post_title . '</a></li>';
+						$curator = get_userdata($groupe->curator);
+            $display .= '<li class="clearfix"><a href="/workgroups/' . $groupe->post_name . '/"><span class="float-left">' . $groupe->post_title . '</span><span class="float-right">'. $curator->display_name .' '.$curator->last_name . '</span></a></li>';
         }
         $display .= '';
     }
@@ -205,7 +206,7 @@ function ajax_comment_load() {
     $wall = display_wall($groupeid, 0, $offset);
     if (!$wall) {
         //  echo 'groupe '.$groupeid.',offset '.$offset;
-        die(__('Plus de posts'));
+        die(__('Plus de posts','cea'));
     }
     foreach ($wall as $com) {
         ?>
@@ -241,7 +242,7 @@ function ajax_comment_load() {
                         if ($user->is_group_autorized($groupeid)) :
                         ?>
                 <!-- BUTTON nouveau sous commentaire -->
-                <a href="#e" class="small button hollow show-subform sub-reply" data-subform="subform-<?= $com->ID; ?>"><?= __('répondre',''); ?> <i class="la la-lg la-reply"></i></a>
+                <a href="#e" class="small button hollow show-subform sub-reply" data-subform="subform-<?= $com->ID; ?>"><?= __('répondre','cea'); ?> <i class="la la-lg la-reply"></i></a>
                 <div class="media-object subform subform-<?= $com->ID; ?>" style="display:none;">
                     <div class="input-group">
                         <span class="input-group-label"><i class="la la-lg la-comments"></i></span>
@@ -255,7 +256,7 @@ function ajax_comment_load() {
                                     >
                                 <i class="la la-lg la-mail-reply"></i>
                             </button>
-                            <button class="button hollow dropmodalbutton" data-open="mydropmodal" data-txt="<?= __('Ajouter fichiers'); ?>" data-tooltip tabindex="1" title="<?= __('Ajouter fichiers'); ?>"><i class="la la-lg la-paperclip"></i> <span class="show-for-sr"><?= __('Ajouter fichiers'); ?></span></button>
+                            <button class="button hollow dropmodalbutton" data-open="mydropmodal" data-txt="<?= __('Ajouter fichiers','cea'); ?>" data-tooltip tabindex="1" title="<?= __('Ajouter fichiers','cea'); ?>"><i class="la la-lg la-paperclip"></i> <span class="show-for-sr"><?= __('Ajouter fichiers','cea'); ?></span></button>
                         </div>
                         
 
@@ -270,7 +271,7 @@ function ajax_comment_load() {
     <div class="button hollow load_next_wall_chunk" 
          data-offset="<?= $offset + 10; ?>"          
          data-idgroupe="<?= $groupeid; ?>"         
-         ><?= __('Afficher les posts suivant'); ?>
+         ><?= __('Afficher les posts suivant','cea'); ?>
     </div>
     <?php
     die();

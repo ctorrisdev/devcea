@@ -9,49 +9,55 @@ get_header(); ?>
 <div class="grid-container full">
 	<div class="grid-x grid-padding-x grid-padding-y">
 
-		<div class="cell medium-4">
+		<div class="cell medium-8">
 			<h1>annuaire</h1>
 <p>L'annuaire recense les membres actifs de l'association qui souhaitent y figurer, diffuser leur contact et leur profil. L'annuaire se nourrit au fur et &agrave; mesure des contributions. </p>
-			<?php 
+<?php 
 $args = array(
-'orderby' => 'last_name',
-
-	'role__in'     => array('curator')
+	'orderby' => 'last_name',
+	'role__in'=> array(
+			'member',
+			'curator',
+			'administrator')
 );
-
-$curators = get_users( $args );
-  
-
-        foreach ($curators as $result) {
-
-            $user = get_userdata($result->ID); 
-
-            $directors[$user->ID] = array(
-                'dir_id'        =>  $user->ID,
-                'dir_name'      =>  $user->last_name.' '.$user->first_name        
-            );
+$list_members = get_users( $args );
+			foreach ($list_members as $result) {
+				$user = get_userdata($result->ID); 
+				$curators[$user->ID] = array(
+        	'id'		=> $user->ID,
+					'login'	=> $user->user_login,
+          'name'	=> $user->last_name.' '.$user->first_name        
+          );
         }
 
-        sort($directors); 
-
-        echo '<ul id="rightcolumndirector">';
-
-        foreach ($directors as $director) { 
-
-            $dir_id = $director['dir_id'];
-            $dir_order = $director['dir_order'];
-            $dir_name = $director['dir_name'];
-            $dir_link = get_bloginfo('home').'/?curator='.$director['dir_id']; 
-
-
-            echo '<li>';
-            echo '<a href="'.$dir_link.'" id="dir-id-'.$dir_id.'">'.$dir_name.'</a>';
-            echo '</li>';
-
-
-        } 
-
-        echo '</ul>';
+				function cmp($a, $b)
+				{
+						return strcasecmp($a['name'], $b['name']);
+				}
+	
+usort($curators, 'cmp');
+			
+$previousalphabet = null;  // initialize the alphabets for to compare with next alphabets for the start.
+$initial_counter  = 1;
+foreach($curators as $curator) {
+  $firstalphabet = substr($curator['name'], 0, 1);     
+  if($previousalphabet !== $firstalphabet) {        
+    if($initial_counter!=1){ echo '</ul></div></div></div></div>'; } ?>  
+    
+			<div class="cell text-center">
+				<div class="grid-container">
+					<div class="grid-y grid-padding-x grid-padding-y">
+						<div class="cell border-bottom">
+							<h3><?php echo $firstalphabet; ?></h3>  
+						</div>
+						<div class="cell">
+							<?php echo '<ul class="no-bullet">';         
+  	}
+		$previousalphabet = $firstalphabet;       
+ 		echo '<li>';
+		echo '<a href="/members/'.$curator['login'].'" >'.$curator['name'].'</a>';      
+  	$initial_counter++;     
+}
 
 
 ?>
@@ -60,14 +66,6 @@ $curators = get_users( $args );
 			
 		</div>
 
-		<div class="cell medium-4 border-left">
-			
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
-				<?php comments_template(); ?>
-			<?php endwhile; ?>
-			
-		</div>
 		<div class="cell medium-4 border-left">
 			<?php get_sidebar(); ?>
 		</div>

@@ -24,79 +24,64 @@ if (!$profil) {
 ?>
 
 <div class="grid-container full">
-    <div class="grid-x">
+		<!-- nom + fonction -->
+    <div class="grid-x grid-padding-x grid-padding-y text-center border-bottom">
+			<div class="cell">
+					<h1><?= $profil->user_nicename; ?><br>
+						<small><?= $profil->titre; ?></small>
+					</h1>
+			</div>
+		</div>
+	
+	
 
-        <div class="cell medium-12 large-8">
+		<div class="grid-x">
+			
+			<div class="cell medium-12 large-8">	
+				<!-- BIO -->	
+				<div class="grid-x grid-padding-x" style="padding-top: 1em; padding-bottom: 1em; ">
+					<div class="cell medium-6" style=""> 	
+						<?php echo get_avatar($profil->ID, 600); ?> 
+						<hr>
+						<h2><?= __('biographie','cea'); ?></h2>
+						<p><?= __('Vit et travaille : ','cea').$profil->city .', '. $profil->pays; ?></p>
+						<p><?= $profil->biographie; ?></p>
+						<hr>
+						<h2>contact</h2>
+						<a href="mailto:<?= $profil->contact; ?>"><?= $profil->contact; ?></a>
+					</div>
+						
+					<div class="cell medium-6 border-left">
+						<h2><?= $profil->titre_de_la_timeline; ?></h2><br>
+						<div class="grid-x">
+<?php
+							if (have_rows('timeline', 'user_' . $profil->ID)):
+								while (have_rows('timeline', 'user_' . $profil->ID)) : the_row(); ?>						
+							<div class="cell medium-2 year"><?= get_sub_field('date'); ?></div>
+<?php ?>
+							<div class="cell medium-10">
+								<?= get_sub_field('contenu'); ?>
+							</div>
+<?php  endwhile; endif; ?>
+						</div>
+					</div>	 
+				</div>
+								<?php
+ 				if ($profil->ID == $user->ID) {
+					get_template_part('template-parts/editor-part');
+					}
+          ?>	
+			</div>
 
-
-            <?php //get_template_part('template-parts/breadcrumbs-part'); ?>
-            <?php
-            if ($profil->ID == $user->ID) {
-                get_template_part('template-parts/editor-part');
-            }
-            ?>		
-
-            <div class="grid-x grid-padding-x grid-padding-y text-center" style="border-bottom: 1px solid #000;">
-                <div class="cell curator_name">
-                    <h1><?= $profil->user_nicename; ?><small><?= $profil->titre; ?>
-                        </small></h1>
-                </div>
-            </div>
-
-            <div class="grid-x grid-padding-x" style="padding-top: 1em; padding-bottom: 1em; ">
-                <div class="cell medium-6" style=""> 	
-
-                    <?php echo get_avatar($profil->ID, 600); ?> 
-
-
-
-                    <hr>
-
-                    <h2>biographie</h2><br>
-                    <?= $profil->biographie; ?>
-
-                    <hr>
-
-                    <h2>contact</h2><br>
-                    <p>
-                        <a href="mailto:<?= $profil->contact; ?>"><?= $profil->contact; ?></a>
-                    </p>
-
-
-                </div>
-
-                <div class="cell medium-6 border-left">
-
-                    <h2><?= $profil->titre_de_la_timeline; ?></h2><br>
-
-                    <div class="grid-x">
-                        <?php
-                        if (have_rows('timeline', 'user_' . $profil->ID)):
-
-                            while (have_rows('timeline', 'user_' . $profil->ID)) : the_row();
-                                ?><div class="cell medium-2 year"><?= get_sub_field('date'); ?></div><?php ?><div class="cell medium-10">
-                                    <ul class="no-bullet">
-                                        <li><?= get_sub_field('contenu'); ?></li>
-                                    </ul>
-                                </div><?php
-                            endwhile;
-
-                        endif;
-                        ?>
-
-
-
-                    </div>
-                </div>	 
-            </div>	
+			<div class="cell medium-12 large-4 border-left bg-informer">
             <?php
             $posts = $cea_user->get_all_posts();
             if ($posts) {
                 ?>
-                <div class="grid-x grid-padding-x grid-padding-y padding-x padding-y" >
+                <div class="grid-x" >
                     <div class="orbit text-center bg-black padding-y" role="region" aria-label="news" data-options="data-timer-delay:3000;" data-orbit data-events="resize">
                         <div class="orbit-wrapper">
-                            <h3><?php _e('derniers articles', ''); ?></h3>
+                            <h3><?php _e('derniers articles', 'cea'); ?></h3>
 
                             <ul tabindex="0" class="orbit-container">
                                 <?php
@@ -131,6 +116,10 @@ if (!$profil) {
                 </div>
             <?php } ?>
 
+
+    </div>
+
+        </div>
             <div class="grid-x grid-padding-x grid-padding-y text-center" style="border-top: 1px solid #000; background: #000; color: #fff">
                 <div class="cell medium-12" >	
                     <?php the_post_navigation(); ?>
@@ -138,23 +127,14 @@ if (!$profil) {
             </div>
 
 
-        </div>
-
-        <div class="cell medium-12 large-4 border-left bg-informer" style="">
-
-            <div class="grid-x grid-padding-x grid-padding-y">
-                <div class="cell medium-12">
-                    <?php get_sidebar(); ?>
-                </div>
-            </div>
-        </div>
-
-    </div>
 </div>
 
-<div class="reveal" id="edit_profil" data-reveal>
+<div class="reveal large" id="edit_profil" data-reveal>
     <h3>Profil</h3>        
     <?php $cea_user->display_user_profile_form(); ?>
+		<button class="close-button" data-close aria-label="Close modal" type="button">
+		    <span aria-hidden="true">&times;</span>
+		</button>
 </div>
 <?php
 get_footer();

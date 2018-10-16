@@ -2,7 +2,7 @@
 			<div class="top-bar-left">
 				<div class="site-desktop-title top-bar-title">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-<img src="<?php echo get_template_directory_uri(); ?>/images/cea-logo.svg" style="height:50px" alt="CEA" />
+<img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/cea-logo.svg" style="height:50px" alt="CEA" />
 <?php //bloginfo( 'name' ); ?> &nbsp;&nbsp;&nbsp;<span>association fran&ccedil;aise des commissaires d'exposition</span></a>
 				</div>
 			</div>

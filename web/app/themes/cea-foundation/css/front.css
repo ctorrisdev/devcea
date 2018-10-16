@@ -416,6 +416,7 @@
 .instruct{
     font-size:11px;
     font-style:italic;
+	margin-left: 1rem
 }
 
 .hidden{
@@ -425,4 +426,7 @@
 
 .et-fb-page-creation-card-choose_premade_layout,.et-fb-page-creation-card-clone_existing_page{
     display:none !important;
+}
+.inline_{
+    display:inline !important;
 }

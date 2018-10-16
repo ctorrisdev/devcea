@@ -6,6 +6,7 @@
  * @since FoundationPress 1.0.0
  */
 get_header();
+echo 'SINGLEDEBUG';
 ?>
 
 <div class="grid-container full align-stretch">

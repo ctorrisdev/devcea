@@ -8,7 +8,7 @@
     </div>
     <div class="medium-12 cell">
       <label for="user_pass"><?= __('Mot de passe'); ?></label>
-      <input type="text" id="user_pass" name="pwd" placeholder="">
+      <input type="password" id="user_pass" name="pwd" placeholder="">
     </div>
   </div>
 
@@ -23,7 +23,7 @@
 
   <div class="grid-x grid-padding-x ">
     <div class="small-12 cell">
-      <input type="submit" tabindex="100" value="Se connecter" id="wp-submit" name="wp-submit" class="button hollow expanded">
+      <input type="submit" tabindex="100" value="Se connecter" id="wp-submit" name="wp-submit" class="button expanded">
       <input type="hidden" value="<?php echo esc_url(get_permalink()); ?>" name="redirect_to">
     </div>
   </div>

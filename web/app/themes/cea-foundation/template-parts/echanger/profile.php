@@ -56,9 +56,12 @@ if ($cea_user->id) {
         </div>
 
     </div>	
-    <div class="reveal" id="edit_profil" data-reveal>
-        <h3>Profil</h3>        
+    <div class="reveal large" id="edit_profil" data-reveal>
+        <h3><?= __('Modifiez votre profil','cea'); ?></h3>        
         <?php $cea_user->display_user_profile_form(); ?>
+			<button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
     </div>
 <?php } else { ?>
     <div class="grid-container full bg-blanc">

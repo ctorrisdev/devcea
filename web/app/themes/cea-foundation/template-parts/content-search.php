@@ -18,10 +18,18 @@
 	} else {
 		the_title( '<h3 class="entry-title">', '</h3>' );
 	}
+		
+	$badge = substr(strtolower(get_the_title()), 0, 4);
 	
-	if ( has_tag('12') ) {
-    echo '<img class="badge-tag" src="'.get_template_directory_uri().'/images/std.svg" />';
+	if ( $badge == 'appe') {
+    echo '<img class="badge-tag" src="'.get_template_directory_uri().'/dist/assets/images/std.svg" />';
 } 
+			if ( $badge == 'job ' || $badge =="offr") {
+    echo '<img class="badge-tag" src="'.get_template_directory_uri().'/dist/assets/images/job.svg" />';
+}
+					if ( $badge == 'tabl') {
+    echo '<img class="badge-tag" src="'.get_template_directory_uri().'/dist/assets/images/tb.svg" />';
+}
 if ( has_tag('11') ) {
     echo '<img class="badge-tag" src="'.get_template_directory_uri().'/images/tb.svg" />';
 } 
@@ -35,7 +43,7 @@ if ( has_tag('11') ) {
 				the_content();
 		 edit_post_link( __( '(Edit)', 'foundationpress' ), '<span class="edit-link">', '</span>' );
 		} else {
-			the_excerpt();
+			nl2br(the_excerpt());
 			echo '<a class="hollow button" href="' . esc_url( get_permalink() ) . '" rel="bookmark">Lire la suite</a>';
 		} ?>
 		

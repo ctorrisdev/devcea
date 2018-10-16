@@ -20,10 +20,10 @@ if ( ! function_exists( 'foundationpress_pagination' ) ) :
 				'base'      => str_replace( $big, '%#%', html_entity_decode( get_pagenum_link( $big ) ) ),
 				'current'   => max( 1, get_query_var( 'paged' ) ),
 				'total'     => $wp_query->max_num_pages,
-				'mid_size'  => 5,
+				'mid_size'  => 4,
 				'prev_next' => true,
-				'prev_text' => __( '&larr;', 'foundationpress' ),
-				'next_text' => __( '&rarr;', 'foundationpress' ),
+				'prev_text' => '<i class="la la-lg la-arrow-left"></i> <span class="show-for-sr">'. __( '&larr;', 'foundationpress' ).'</span>',
+				'next_text' => '<i class="la la-lg la-arrow-right"></i> <span class="show-for-sr">'. __( '&rarr;', 'foundationpress' ).'</span>',
 				'type'      => 'list',
 			)
 		);

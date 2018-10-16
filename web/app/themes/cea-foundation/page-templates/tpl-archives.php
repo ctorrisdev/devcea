@@ -21,7 +21,13 @@ get_header(); ?>
 			
 			<?php //get_template_part('template-parts/breadcrumbs-part'); ?>
 			
-		    <?php $args = array('post_type' => 'post','posts_per_page' => '12' );
+		    <?php 
+		$args = array(
+				'post_type' => 'post',
+				'category__not_in' => array( 24, 34 ),
+				'posts_per_page' => '12',
+				'paged' => $paged 
+				);
 		      $wp_query = new WP_Query( $args ); ?>
 		    <div class="grid-container full">
 			    <div class="grid-x grid-padding-x grid-padding-y list-posts bg-black small-up-1 medium-up-3" >

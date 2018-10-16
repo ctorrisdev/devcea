@@ -3,7 +3,10 @@
 Template Name: tpl-archives
 */
 
-get_header(); ?>
+get_header(); 
+
+ECHO 'DEBUG ARCHIVE';
+?>
 
 <div class="grid-container full">
 	<div class="grid-x align-top bg-zigzag">
@@ -22,7 +25,7 @@ get_header(); ?>
 			<?php //get_template_part('template-parts/breadcrumbs-part'); ?>
 			
 		    <div class="grid-container full">
-			    <div class="grid-x grid-padding-x grid-padding-y list-posts bg-black small-up-1 medium-up-3 large-up-6" >
+			    <div class="grid-x grid-padding-x grid-padding-y list-posts bg-black small-up-1 medium-up-3" >
 				    <?php if ( have_posts() ) : ?>
 				    
 				    <?php while ( have_posts() ) : the_post(); ?>

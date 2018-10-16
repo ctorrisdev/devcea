@@ -5645,8 +5645,9 @@ strong {
 	font-style: normal;
 	font-weight: 700 !important;
 	color: inherit;
+		-ms-hyphens: auto !important;
+	-webkit-hyphens: auto !important;
 	hyphens: auto !important;
-	-ms-hyphens: auto !important;
 	text-rendering: optimizeLegibility
 }
 
@@ -5665,6 +5666,8 @@ h6 small {
 	line-height: 0;
 	color: #000
 }
+
+
 
 .h1,
 h1 {
@@ -6683,7 +6686,7 @@ textarea {
 [type=week]:focus,
 textarea:focus {
 	outline: 0;
-	border: 2px solid #000;
+	/*border: 2px solid #000;*/
 	background-color: #fff;
 	box-shadow: inset 0 0 2px #555;
 	transition: box-shadow .5s, border-color .25s ease-in-out
@@ -6928,10 +6931,7 @@ select {
 
 select:focus {
 	outline: 0;
-	border: 1px solid #8a8a8a;
-	background-color: #fefefe;
-	box-shadow: 0 0 5px #cacaca;
-	transition: box-shadow .5s, border-color .25s ease-in-out
+	border: none
 }
 
 select:disabled {
@@ -7524,7 +7524,7 @@ screen and (min-width:64em) {
 
 .close-button {
 	position: absolute;
-	color: #8a8a8a;
+	color: #8a8a8a !important;
 	cursor: pointer
 }
 
@@ -9200,7 +9200,8 @@ screen and (min-width:40em) {
 	padding: .1875rem .625rem;
 	border: 2px solid #fff;
 	color: #fefefe;
-	cursor: default
+	cursor: default;
+	font-family: "Vollkorn", serif;
 }
 
 .pagination .disabled {
@@ -11669,7 +11670,7 @@ screen and (min-width:40em) {
 }
 
 .top-bar .menu li:not(:last-child) {
-	border-right: 1px solid #4e4e4e
+	border-right: 1px solid #fff
 }
 
 .top-bar .dropdown.menu .submenu {
@@ -11944,29 +11945,7 @@ button:focus [data-whatinput=touch] a:focus {
 	outline: 0
 }
 
-.front-hero {
-	background: url(../images/demo/hero-bg-foundation-6-small.svg) bottom center;
-	background-size: cover;
-	background-position: bottom;
-	padding: 4.0625rem 0;
-	margin: 0 0 2rem;
-	height: auto;
-	position: relative;
-	text-align: left
-}
 
-.front-hero .marketing {
-	padding-right: .625rem;
-	padding-left: .625rem;
-	max-width: 55rem;
-	margin: 0 auto;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-flex-flow: row wrap;
-	-ms-flex-flow: row wrap;
-	flex-flow: row wrap
-}
 
 @media print,
 screen and (min-width:40em) {
@@ -11987,11 +11966,7 @@ screen and (min-width:40em) {
 	}
 }
 
-.front-hero .watch {
-	width: calc(58.33333% - 1.25rem);
-	margin-right: .625rem;
-	margin-left: .625rem
-}
+
 
 @media print,
 screen and (min-width:40em) {
@@ -12000,76 +11975,6 @@ screen and (min-width:40em) {
 		margin-right: .9375rem;
 		margin-left: .9375rem
 	}
-}
-
-.front-hero .watch a {
-	color: #b4c9d1;
-	cursor: pointer;
-	font-weight: 400;
-	margin-right: 1.25rem
-}
-
-.front-hero .watch a:hover {
-	color: #fff
-}
-
-.front-hero .watch #stargazers :before {
-	content: "\f09b";
-	font-family: FontAwesome;
-	font-style: normal;
-	font-weight: 400;
-	text-decoration: inherit;
-	color: #b4c9d1;
-	margin-right: .5rem
-}
-
-.front-hero .watch #twitter :before {
-	content: "\f099";
-	font-family: FontAwesome;
-	font-style: normal;
-	font-weight: 400;
-	text-decoration: inherit;
-	color: #b4c9d1;
-	margin-right: .5rem
-}
-
-.front-hero .tagline {
-	width: calc(66.66667% - 1.25rem);
-	margin-right: .625rem;
-	margin-left: .625rem
-}
-
-@media print,
-screen and (min-width:40em) {
-	.front-hero .tagline {
-		width: calc(41.66667% - 1.875rem);
-		margin-right: .9375rem;
-		margin-left: .9375rem;
-		padding-top: 6rem
-	}
-}
-
-.front-hero h1 {
-	color: #fff;
-	font-weight: 500;
-	font-size: 2.2rem
-}
-
-@media print,
-screen and (min-width:40em) {
-	.front-hero h1 {
-		font-size: 2.875rem
-	}
-}
-
-.front-hero h4 {
-	color: #fefefe;
-	font-weight: 300;
-	font-size: 1.3125rem
-}
-
-.front-hero .download {
-	margin-top: 1.25rem
 }
 
 .intro {
@@ -13799,6 +13704,8 @@ screen and (min-width:64em) {
 	float: right !important;
 }
 
+
+
 #menu_drag {
 	position: absolute;
 	z-index: 1000000;
@@ -13864,19 +13771,23 @@ ul.drilldown>li>a {
 .menu-flex>ul{
     width: 100%;
     display: flex;
-    justify-content: space-around
+    justify-content: space-around;
+	text-transform: lowercase
     }
 .top-bar .menu-flex .menu li:not(:last-child) {
     border-right: none;
 }
-
+/*
+#main_menu>div{
+		background-image: url('../images/sous-cea-logo.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+*/
 .logo-c-e-a{
-    margin: 1rem auto}
-    
-    
-.logo-c-e-a {
-    width: 100%;
-
+    margin: 1rem auto;	
+		width: 100%;
     transition: 0.5s ease-in-out}
     
     .logo-c-e-a.tiny {
@@ -13912,12 +13823,22 @@ ol {
 	color: #6CBDFF;
 }
 
-p a {
+p a:not(.button) {
 	padding: 0 !important
 }
 
 p a:hover {
-	background: #3399ff !important;
+	background: #6CBDFF !important;
+	color: #fff !important;
+}
+
+p a.button {
+	background: #fff !important;
+	color: #000 !important;
+}
+
+p a.button:hover {
+	background: #000 !important;
 	color: #fff !important;
 }
 
@@ -13935,6 +13856,10 @@ p a:hover {
 
 .top-bar .menu.submenu li:not(:last-child) {
     border-right: 0;
+}
+
+.sticky.is-anchored{
+	z-index: 2
 }
 
 @media screen and (max-width: 39.9em){
@@ -14040,6 +13965,13 @@ p a:hover {
 	}
 }
 
+.bg-croix {
+	background-color: #ffffff;
+	background-image: url(../images/bg-croix.svg);
+	background-repeat: no-repeat;
+	background-size: 100%
+}
+
 .bg-zigouigoui {
 	background-color: #ffffff;
 	background: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-zigouigoui.svg) center center;
@@ -14091,8 +14023,12 @@ p a:hover {
 	color: #000
 }
 
-.bg-black {
+.bg-black{
 	background: #000 !important;
+	color: #fff !important
+}
+
+.bg-black small {
 	color: #fff !important
 }
 
@@ -14115,11 +14051,39 @@ p a:hover {
     font-weight: normal !important}
 
 .bg-blanc .button.hollow,
-.bg-black .bg-blanc .button.hollow,
+.bg-black .bg-blanc .button.hollow
+{
+	background-color: transparent !important;
+	color: #000 !important;
+	border: 2px solid #000;
+}
+
 .bg-black .button{
 	background-color: #fff !important;
 	color: #000 !important;
 	border: 2px solid #000;
+}
+
+
+.bg-black .button.hollow {
+	background-color: #000 !important;
+	color: #fff !important;
+	border: 2px solid #fff;
+	font-family: "Vollkorn", serif;
+}
+
+.profile_menutop select{
+	margin-bottom: 0
+}
+select.bg-black{
+	background-image:
+	url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb%28255, 255, 255%29'></polygon></svg>") !important;
+	background-origin: content-box !important;
+background-position: right -1rem center !important;
+background-repeat: no-repeat !important;
+background-size: 9px 6px !important;
+	background-color: #000;
+	border-bottom: 1px solid #fff
 }
 
 .bg-blanc .button.hollow:focus,
@@ -14133,12 +14097,6 @@ p a:hover {
 
 }
 
-.bg-black .button.hollow {
-	background-color: #000 !important;
-	color: #fff !important;
-	border: 2px solid #fff;
-	font-family: "Vollkorn", serif;
-}
 
 .bg-black .button.hollow:focus,
 .bg-black .button.hollow:hover,
@@ -14167,6 +14125,13 @@ p a:hover {
 	background-color: #fff;
 	color: #000 !important;
 	border: 1px solid #6CBDFF;
+}
+
+
+
+
+.input-group-button .button{
+	border-left: none !important
 }
 
 .wp-editor-tools .button{color:#000 !important}
@@ -14251,6 +14216,11 @@ img.badge-tag {
 	align-items: center;
 }
 
+#liste_groupes{
+	padding: 1rem 0
+}
+
+
 .group-list li {
 	padding: .5em 0
 }
@@ -14268,14 +14238,14 @@ img.badge-tag {
 		position: absolute;
 		width: 100px;
 		right: 5px;
-		z-index: 1000;
+		z-index: 0;
 		bottom: 0px;
 	}
 	.list-posts article .badge-tag {
 		position: absolute;
 		width: 100px;
 		right: 5px;
-		z-index: 1000;
+		z-index: 0;
 		bottom: 10px;
 	}
 }
@@ -14285,16 +14255,17 @@ img.badge-tag {
 		position: absolute;
 		width: 100px;
 		left: -50px;
-		z-index: 1000;
+		z-index: 0;
 		bottom: 65px;
 	}
 	.list-posts article .badge-tag {
 		position: absolute;
 		width: 100px;
 		right: 0 !important;
-		z-index: 1000;
+		z-index: 0;
 		bottom: 30px;
-		left: auto
+		left: auto;
+		
 	}
 }
 
@@ -14303,14 +14274,14 @@ img.badge-tag {
 		position: absolute;
 		width: 300px;
 		left: -100px;
-		z-index: 1000;
+		z-index: 0;
 		mix-blend-mode: multiply;
 	}
 	.list-posts article .badge-tag {
 		position: absolute;
 		width: 200px;
 		right: 5%;
-		z-index: 1000;
+		z-index: 0;
 		bottom: 40px;
 		left: auto;
 	}
@@ -14318,7 +14289,7 @@ img.badge-tag {
 		position: absolute;
 		width: 300px;
 		right: 0;
-		z-index: 1000;
+		z-index: 0;
 		mix-blend-mode: multiply;
 		left: auto;
 	}
@@ -14437,6 +14408,11 @@ article.post {
 
 .slide-text p {
 	font-size: 1em !important
+}
+
+.slide-news{
+	background: url(../images/en_actu.svg)no-repeat center 5em; 
+	background-size: 400px
 }
 
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
@@ -14583,6 +14559,9 @@ img.fr-content-element, img.pj-img{
 	margin: -1rem 1rem -1rem -1rem;
 	height: 75px;
 }
+.img-pool{
+    margin: -.9375rem -.9375rem .9375rem -.9375rem;
+}
 
 .list-pool.small-up-1>.cell {
 	margin: 1px;
@@ -14609,6 +14588,12 @@ img.fr-content-element, img.pj-img{
 	background: #fff;
 	width: calc(100% - 2px);
 	color: #000 !important;
+}
+
+.archives-widget .input-group,
+.archives-widget input,
+.archives-widget select{
+	margin-bottom: 0
 }
 
 @media print,screen and (min-width:40em) {
@@ -14655,3 +14640,37 @@ img.fr-content-element, img.pj-img{
 
 .sticky-container{
     transition: height .5s easeInOut}
+
+/* REVEAL FORMULAIRE ACF */
+.acf-fields > .acf-field {
+    position: relative;
+    margin: 0;
+    padding: 15px 0px;
+    border-top: none;
+}
+
+.wp-core-ui .button, .wp-core-ui .button-secondary {
+    color: #000 !importanr;
+    border-color: 000;
+    background: #f7f7f7;
+    box-shadow: 0 1px 0 #cccccc; 
+    vertical-align: top;
+}
+
+
+
+.expanded-grid{
+	margin-bottom:0
+}
+
+.expanded-grid>*{
+	border: 0;
+	border-bottom: 2px solid #000;
+}
+
+
+
+.expanded-grid .input-group-button .button{
+	border: 0;
+	border-left: 2px solid #000 !important;
+}

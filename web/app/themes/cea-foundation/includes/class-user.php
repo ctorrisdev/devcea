@@ -97,7 +97,7 @@ class cea_user {
         acf_form(array(
             'post_id' => 'user_' . $this->id,
             'post_title' => false,
-            'fields' => array("titre", "biographie", "contact", "titre_de_la_timeline", "timeline"),
+            'fields' => array("titre", "city", "pays", "biographie", "contact", "titre_de_la_timeline", "timeline"),
             'submit_value' => __('Sauvegarder', 'cea'),
             'return' => '/members/' . $this->profil->user_login
         ));

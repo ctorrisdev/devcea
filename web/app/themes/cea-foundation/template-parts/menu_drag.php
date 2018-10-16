@@ -1,7 +1,7 @@
 <nav  id="menu_drag" class="bg-blue ui-widget-content">
 
     <i class="la la-lg la-bars"></i> 
-    <h3 class="text-center"><img class="menu-logo" alt="CEA" src="<?= get_template_directory_uri(); ?>/images/cea-logo-blanc.svg"></h3>
+    <h3 class="text-center"><img class="menu-logo" alt="CEA" src="<?= get_template_directory_uri(); ?>/dist/assets/images/cea-logo-blanc.svg"></h3>
 
     <ul class="vertical menu text-center" data-drilldown  data-animate-height="true" style="max-width: 250px;">
 
@@ -22,6 +22,6 @@
             </ul>
         </li>
         <li><a href="<?= get_home_url(); ?>/structurer/">structurer</a></li>
-        <li><a href="<?= get_home_url(); ?>/structurer/">FR / EN</a></li>
+        <li><br/><a href="<?= get_home_url(); ?>/" class="inline_">FR</a>/<a class="inline_" href="<?= get_home_url(); ?>/en">EN</a></li>
     </ul>
 </nav>

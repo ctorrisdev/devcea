@@ -47,13 +47,10 @@
             </div>
 
             <?php
-            if (is_front_page()) {
 
-                get_template_part('template-parts/menu2');
-            } else {
-                get_template_part('template-parts/menu2');
-            }
+            get_template_part('template-parts/menu2');
             ?>
             <?php get_template_part('template-parts/profil-offcanvas'); ?>
-            <?php //get_template_part('template-parts/echanger/profile-top'); ?>
+        
+
         </header>

@@ -13777,14 +13777,14 @@ ul.drilldown>li>a {
 .top-bar .menu-flex .menu li:not(:last-child) {
     border-right: none;
 }
-/*
+
 #main_menu>div{
 		background-image: url('../images/sous-cea-logo.svg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
 }
-*/
+
 .logo-c-e-a{
     margin: 1rem auto;	
 		width: 100%;

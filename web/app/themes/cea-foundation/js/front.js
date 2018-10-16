@@ -16,6 +16,11 @@ Dropzone.options.ceadrop = {
     init: function () {
         this.on("complete", function (file, response) {
             if (file.xhr) {
+                file.xhr.response = file.xhr.response.replace(/(\r\n|\n|\r)/gm, "");
+                file.xhr.response = file.xhr.response.replace(/\s/g, '');
+                file.xhr.response = file.xhr.response.replace('↵', '');
+                file.xhr.response = file.xhr.response.replace(' ', '');
+                console.log(file.xhr.response);
                 files_for_this_post.push(file.xhr.response);
                 $('.dropmodalbutton').html('+' + files_for_this_post.length + ' doc(s)');
                 console.log(files_for_this_post);
@@ -87,7 +92,7 @@ jQuery(document).ready(function ($) {
 
 
     $(document).on('click', '.submit_wall_post', function () {
-        var input = $(this).closest('.media-object').find('input');
+        var input = $(this).parents('.input-group').find('input');
         var responsediv = $(this).data('response_loc');
         var typecom = $(this).data('typecom');
         if (!input.val()) {
@@ -234,4 +239,9 @@ jQuery(document).ready(function ($) {
                 }
         );
     });
+    
+    $('.modifprof').click(function(){
+        $('.off-canvas').find('.close-button').trigger('click');
+    });
+    
 });

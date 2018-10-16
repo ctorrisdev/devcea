@@ -430,3 +430,16 @@
 .inline_{
     display:inline !important;
 }
+
+.slide-text.hasimage{
+    padding:0!important;
+    position:relative;
+}
+.slide-text.hasimage a{
+    margin-top:450px;
+}
+.slide-text img{
+    left: 0;
+    top: 0;
+    position:absolute;
+}

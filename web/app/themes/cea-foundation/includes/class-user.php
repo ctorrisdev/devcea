@@ -36,6 +36,9 @@ class cea_user {
     }
 
     function add_groupe($id) {
+        if(!is_array($this->groupes)){
+            $this->groupes = array();
+        }
         if (!in_array($id, $this->groupes)) {
             $this->groupes[] = $id;
         }
@@ -90,6 +93,7 @@ class cea_user {
             'posts_per_page' => $limit
         );
         $current_user_posts = get_posts($args);
+         wp_reset_postdata();
         return($current_user_posts);
     }
     
@@ -97,10 +101,12 @@ class cea_user {
         acf_form(array(
             'post_id' => 'user_' . $this->id,
             'post_title' => false,
-            'fields' => array("titre", "city", "pays", "biographie", "contact", "titre_de_la_timeline", "timeline"),
+            'fields' => array("titre", "city", "pays", "biographie", "contact", "liens", "titre_de_la_timeline", "timeline"),
             'submit_value' => __('Sauvegarder', 'cea'),
             'return' => '/members/' . $this->profil->user_login
         ));
+        wp_reset_postdata();
+
     }
 
 }

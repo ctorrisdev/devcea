@@ -2,6 +2,7 @@
 /*
 Template Name: Full Width
 */
+acf_form_head();
 get_header(); ?>
 
 <?php get_template_part( 'template-parts/featured-image' ); ?>

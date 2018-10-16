@@ -85,7 +85,7 @@ function rewrite_rules()
 {
     add_rewrite_rule(
         'members/([^/]+)/?',
-        'index.php?pagename=dev-curator&designer_slug=$matches[1]',
+        'index.php?pagename=curator&designer_slug=$matches[1]',
         'top' );
      add_rewrite_rule(
         'workgroups/([^/]+)/?',

@@ -12,7 +12,7 @@ if ($cea_user->id) {
                 <h4><?= $user->display_name; ?></h4>
             </div>
             <div class="cell">
-                <div class="stacked-for-small button-group">
+                <div class="stacked-for-medium button-group">
                     <a href="" class="button"><?php _e('home', ''); ?></a>
                     <a href="/members/<?= $user->user_login; ?>/" class="button"><?php _e('Ma page', ''); ?></a>
                     <a href="<?= wp_logout_url(get_permalink('23')); ?>" class="button"><?php _e('D&eacute;connection', ''); ?></a>

@@ -59,7 +59,7 @@ function slider_post($category, $nbre, $bgcolor, $full = null) {
                     <li class="orbit-slide" >
                         <div class="slide-text <?= $image ? 'hasimage' : 'padding-y'; ?>">                           
                             <?php if (!$full) {
-                                ?><h2 class="serif"><?php the_title(); ?></h2><?php
+                                ?><h2 class="serif"><?= $post->post_title; ?></h2><?php
                                 nl2br(the_excerpt());
                             } else {
                                 if (!$image)

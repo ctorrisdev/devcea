@@ -5641,16 +5641,40 @@ h4,
 h5,
 h6,
 strong {
-	font-family: 'Montserrat', "Vollkorn", serif;
+	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
-	font-weight: 700 !important;
+	font-weight: 400 !important;
 	color: inherit;
+	text-transform: uppercase;
 		-ms-hyphens: auto !important;
 	-webkit-hyphens: auto !important;
 	hyphens: auto !important;
 	text-rendering: optimizeLegibility
 }
 
+.h1.serif,
+.h2.serif,
+.h3.serif,
+.h4.serif,
+.h5.serif,
+.h6.serif,
+h1.serif,
+h2.serif,
+h3.serif,
+h4.serif,
+h5.serif,
+h6.serif,
+strong.serif{
+	font-family: 'Vollkorn', serif;
+	font-style: normal;
+	font-weight: 600 !important;
+	color: inherit;
+	text-transform: none;
+		-ms-hyphens: auto !important;
+	-webkit-hyphens: auto !important;
+	hyphens: auto !important;
+	text-rendering: optimizeLegibility
+}
 .h1 small,
 .h2 small,
 .h3 small,
@@ -5664,7 +5688,8 @@ h4 small,
 h5 small,
 h6 small {
 	line-height: 0;
-	color: #000
+	color: #000;
+	text-transform: lowercase
 }
 
 
@@ -13777,14 +13802,14 @@ ul.drilldown>li>a {
 .top-bar .menu-flex .menu li:not(:last-child) {
     border-right: none;
 }
-
+/*
 #main_menu>div{
 		background-image: url('../images/sous-cea-logo.svg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
 }
-
+*/
 .logo-c-e-a{
     margin: 1rem auto;	
 		width: 100%;

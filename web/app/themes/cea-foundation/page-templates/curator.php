@@ -4,7 +4,7 @@
  */
 acf_form_head();
 
-get_header();
+get_header(); /*test*/
 
 $user = wp_get_current_user();
 
@@ -43,26 +43,28 @@ if (!$profil) {
                 <div class="cell medium-6" style=""> 	
                     <?php echo get_avatar($profil->ID, 600); ?> 
                     <hr>
-                    <h2><?= __('biographie', 'cea'); ?></h2>
+                    <h3><?= __('biographie', 'cea'); ?></h3>
                     <p><?= __('Vit et travaille : ', 'cea') . $profil->city . ', ' . $profil->pays; ?></p>
                     <p><?= $profil->biographie; ?></p>
                     <hr>
-                    <h2>contact</h2>
-                    <a href="mailto:<?= $profil->contact; ?>"><?= $profil->contact; ?></a>
-                    <h2>liens</h2>
+                    <h3>contact</h3>
+                    <ul class="no-bullet">
+                    <li><a href="mailto:<?= $profil->contact; ?>" class="tiny button hollow"><?= $profil->contact; ?></a></li>
+                    
                     <?php
                     if (have_rows('liens', 'user_' . $profil->ID)):
                         while (have_rows('liens', 'user_' . $profil->ID)) : the_row();
                             ?>
-                            <p><a href="<?= get_sub_field('url'); ?>" target="_blank"><?= get_sub_field('intitule'); ?></a></p>
+                            <li><a href="<?= get_sub_field('url'); ?>" target="_blank" class="tiny button hollow"><?= get_sub_field('intitule'); ?></a></li>
                         <?php
                         endwhile;
                     endif;
                     ?>
+                    </ul>
                 </div>
 
                 <div class="cell medium-6 border-left">
-                    <h2><?= $profil->titre_de_la_timeline; ?></h2><br>
+                    <h3><?= $profil->titre_de_la_timeline; ?></h3><br>
                     <div class="grid-x">
                         <?php
                         if (have_rows('timeline', 'user_' . $profil->ID)):

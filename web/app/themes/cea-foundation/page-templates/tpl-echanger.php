@@ -26,10 +26,10 @@ if ($groupename) {
 $user = wp_get_current_user();
 $cea_user = new cea_user($user->ID);
 ?>
-
+<?php get_template_part( 'template-parts/article-header' ); ?>
 <?php while (have_posts()) : the_post(); ?>
 
-    <div class="grid-container full off-canvas-wrapper">
+    <div class="grid-container full">
 
 
         <div class="grid-x">
@@ -57,7 +57,7 @@ $cea_user = new cea_user($user->ID);
                                     </div>
                             </form>
                             -->
-                            <span class="h2"><?= __('Liste des groupes', 'cea'); ?></span>
+                            <h3><?= __('Liste des groupes', 'cea'); ?></h3>
                             <div id="liste_groupes">
                                 <ul class="no-bullet text-center group-list">
                                     <?= get_groupes_list(); ?>
@@ -145,9 +145,14 @@ $cea_user = new cea_user($user->ID);
     </div>
 
     <div class="reveal" id="mydropmodal" data-reveal>
+    <i class="text-center la la-5x la-comment"></i>
         <br><br>
         <div class="editmode" style="display:none;">
-            <input type="text" id="com_editor" name="com_editor" value="" />
+            <div class="input-group">
+				<span class="input-group-label"><i class="la la-lg la-comment"></i></span>
+				<input type="text" id="com_editor" class="input-group-field" name="com_editor" value="" />
+					</div>
+					
         </div>
         <form id="ceadrop" class="dropzone">
         </form>

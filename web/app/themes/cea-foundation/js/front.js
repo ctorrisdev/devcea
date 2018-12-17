@@ -244,4 +244,12 @@ jQuery(document).ready(function ($) {
         $('.off-canvas').find('.close-button').trigger('click');
     });
     
+    if(jQuery('#show_edit_profil').val()){
+        console.log('oui');
+        setTimeout(function(){
+            $('#opentrigger').trigger('click');
+        },1000);
+        
+    }
+    
 });

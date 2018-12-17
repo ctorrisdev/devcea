@@ -416,7 +416,7 @@
 .instruct{
     font-size:11px;
     font-style:italic;
-	margin-left: 1rem
+	margin-left: 3rem
 }
 
 .hidden{
@@ -442,4 +442,13 @@
     left: 0;
     top: 0;
     position:absolute;
+}
+#wp-admin-bar-root-default li{
+    display:none;
+}
+#wp-admin-bar-top-secondary{
+    display:none;
+}
+#wp-admin-bar-et-disable-visual-builder{
+    display:block !important;
 }

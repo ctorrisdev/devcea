@@ -1,4 +1,4 @@
-<header id="main_menu" data-sticky data-options="marginTop:0;" data-check-every=-1 class="bg-blanc hide-for-small">
+<header id="main_menu" data-sticky data-options="marginTop:0;" data-check-every=-1 class="bg-blanc show-for-medium">
 
     <div class="grid-container full text-center">
         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">

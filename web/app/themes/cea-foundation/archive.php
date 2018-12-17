@@ -5,7 +5,6 @@ Template Name: tpl-archives
 
 get_header(); 
 
-ECHO 'DEBUG ARCHIVE';
 ?>
 
 <div class="grid-container full">

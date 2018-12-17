@@ -8,18 +8,18 @@ get_header(); ?>
 <div class="grid-container full">
 	<div class="grid-x align-top bg-zigzag">
 	
+    	<!-- SIDEBAR WIDGETS -->
 		<div class="cell small-12">
 			<div class="grid-container full">
-				<aside class="sidebar grid-x grid-padding-x grid-padding-y small-up-1 medium-up-3	bg-black align-middle">
-					<?php dynamic_sidebar( 'archives'); ?>
-				</aside>
+					<aside class="sidebar grid-x grid-padding-x grid-padding-y small-up-1 medium-up-3	bg-black align-middle">
+						<?php dynamic_sidebar( 'archives'); ?>
+					</aside>
 				</div>
-		
 		</div>
-
+	    <!-- // SIDEBAR WIDGETS -->
+		
+		
 		<div class="cell bg-blanc">
-			
-			<?php //get_template_part('template-parts/breadcrumbs-part'); ?>
 			
 		    <?php 
 		$args = array(
@@ -36,6 +36,14 @@ get_header(); ?>
 			        <?php get_template_part( 'template-parts/content', 'search' ); ?>
 			        <?php endwhile; ?>
 			        <?php endif; ?>
+			        <?php 
+							if($wp_query->post_count != 12 && $wp_query->post_count != 9 && $wp_query->post_count != 6 && $wp_query->post_count != 3){
+								echo '<div class="cell auto bg-zigouigoui"></div>';
+							} 
+						else{
+							echo '';
+						}
+						?>
 			    </div>		    
 		    
 		    <?php get_template_part('template-parts/pagination-part'); ?>

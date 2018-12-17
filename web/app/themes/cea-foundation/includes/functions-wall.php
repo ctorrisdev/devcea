@@ -88,6 +88,9 @@ function get_groupes_list() {
         $posts_array = array(
             'posts_per_page' => 10,
             'post_type' => 'groupes',
+            'order' => 'DESC',
+            'orderby' => 'meta_value',
+            'meta_key' => 'last_update'
         );
         $posts = get_posts($posts_array);
     } else {
@@ -95,8 +98,12 @@ function get_groupes_list() {
             'post_type' => 'groupes',
             's' => $find,
             'posts_per_page' => 10,
+            'order' => 'DESC',
+            'orderby' => 'meta_value',
+            'meta_key' => 'last_update'
         ));
     }
+    
 
 
 
@@ -107,7 +114,7 @@ function get_groupes_list() {
         $display = __('Aucun groupe correspondant','cea');
     } else {
         foreach ($posts as $groupe) {
-						$curator = get_userdata($groupe->curator);
+            $curator = get_userdata($groupe->curator);
             $display .= '<li class="clearfix"><a href="/workgroups/' . $groupe->post_name . '/"><span class="float-left">' . $groupe->post_title . '</span><span class="float-right">'. $curator->display_name .' '.$curator->last_name . '</span></a></li>';
         }
         $display .= '';
@@ -185,10 +192,9 @@ function display_wall($groupe = 0, $replyto = 0, $offset = 0,$order = 'DESC') {
       echo '<pre>';
       var_dump($posts_array);
       echo '</pre>'; */
-    $posts = get_posts($posts_array);
-
-
-    return($posts);
+    $mesposts = get_posts($posts_array);
+    wp_reset_query();
+    return($mesposts);
 }
 
 /* AJAX DISPLAY OF THE WALL */
@@ -356,6 +362,9 @@ function ajaxwallPost() {
     $idpost = wp_insert_post($my_post);
     update_field('groupe_de_travail', $groupeid, $idpost);
     update_field('reply-to', $replyto, $idpost);
+    
+    if($groupeid)
+        update_field('last_update',time(),$groupeid);
    
     } else { /* edit mode */
         $idpost = $id;
@@ -403,7 +412,7 @@ function format_gallery_wall($json) {
 
     $array = json_clean_decode(html_entity_decode($json));
 
-    $images = array('.jpg', '.png');
+    $images = array('.jpg','.jpeg', '.png','.gif');
     $images_array = array();
     $files_array = array();
 

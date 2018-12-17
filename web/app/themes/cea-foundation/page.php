@@ -10,7 +10,6 @@
  * @since FoundationPress 1.0.0
  */
 get_header();
-echo 'DEBUUGU';
 ?>
 
 <?php get_template_part('template-parts/featured-image'); ?>

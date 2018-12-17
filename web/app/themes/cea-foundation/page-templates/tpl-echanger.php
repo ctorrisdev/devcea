@@ -49,14 +49,7 @@ $cea_user = new cea_user($user->ID);
 
                         <!-- formulaire recherche groupe -->
                         <div class="cell bg-blanc border-bottom">
-                            <!--
-                            <form id="groupsearch">
-                                    <div class="input-group">
-                                            <span class="input-group-label"><i class="la la-lg la-search"></i></span>
-                                            <input class="input-group-field" type="text" placeholder="<?= __('Rechercher un groupe', 'cea'); ?>">
-                                    </div>
-                            </form>
-                            -->
+
                             <h3><?= __('Liste des groupes', 'cea'); ?></h3>
                             <div id="liste_groupes">
                                 <ul class="no-bullet text-center group-list">

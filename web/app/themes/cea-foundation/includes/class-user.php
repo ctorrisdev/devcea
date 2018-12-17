@@ -9,10 +9,11 @@ class cea_user {
     public $groupes = array();
     public $profil;
 
-    function __construct($id) { //accept int OR login
-        if(!$id || is_null($id)){
-            
-            return false;
+    function __construct($id = null,$login=null,$email=null) { //accept int OR login
+        if(!$id || is_null($id)){            
+            $random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
+            $this->id = wp_create_user( $login, $random_password, $email );
+            return;
         }
         if(!is_int($id)){
             $profil = get_user_by('login', $id);
@@ -66,6 +67,7 @@ class cea_user {
     
     function is_group_autorized($groupeid){
         $user = get_user_by('id',$this->id);
+        if(!$user) return(false);
         if($this->id && (!$groupeid 
                 || $this->is_in_group($groupeid) 
                 || in_array('administrator', (array) $user->roles) 
@@ -80,6 +82,22 @@ class cea_user {
     function save() {
         $json = json_encode($this->groupes);
         update_field('mes_groupes', $json, $this->userid);
+    }
+    
+    
+    function get_all_curations($limit = 10) {    
+
+        $args = array(
+            'author' => $this->id,
+            'post_type' => 'creations',
+            'post_status' => 'publish',
+            'orderby' => 'post_date',
+            'order' => 'DESC',
+            'posts_per_page' => $limit
+        );
+        $current_user_posts = get_posts($args);
+         wp_reset_postdata();
+        return($current_user_posts);
     }
     
     

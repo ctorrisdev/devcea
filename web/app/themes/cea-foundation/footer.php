@@ -25,19 +25,10 @@
 
             <div class="cell medium-4 border-left border-right small-order-1 medium-order-2">
                 <ul class="no-bullet text-center">
-                    <li>
-                        <label><?= __('Abonnez-vous &agrave; notre newsletter', 'cea'); ?></label>
-                        <div class="input-group">
-                            <input class="input-group-field" type="text">
-                            <div class="input-group-button">
-                                <button type="submit" class="button">
-                                    <i class="la la-lg la-check"></i><span class="show-for-sr"><?= __('envoyer', ''); ?></span>
-                                </button>
-                            </div>
-                        </div>
+                    <li><?php get_template_part( 'template-parts/mailchimp' ); ?>
                     </li>
                     <li><a href="<?= get_field('facebook','options'); ?>" target="_blank">facebook</a></li>
-                    <li><a href="<?= get_field('twitter','options'); ?>" target="_blank">twitter</a></li>
+										<li><a href="<?= get_field('twitter','options'); ?>" target="_blank">instagram</a></li>
                 </ul>
             </div>
 
@@ -50,7 +41,7 @@
                     </li>
                     <li>
                         <a href="<?php echo get_permalink('7396'); ?>">
-                            <?= __('cr&eacute;dits</a></li>', 'cea'); ?>
+                            <?= __('cr&eacute;dits', 'cea'); ?>
                         </a>
                     </li>
                 </ul>
@@ -60,9 +51,11 @@
 
         <div class="partners grid-x grid-padding-x grid-padding-y align-middle border-top">
             <div class="cell medium-12 text-center">
+							<a href="https://www.cnc.fr/professionnels/aides-et-financements/nouveaux-medias-et-creation-numerique/dispositif-pour-la-creation-artistique-multimedia-et-numerique-dicream_191324/"><img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/partenaires/CNC-DICREAM.jpg" style="height:80px" /></a>
+							<a href="http://www.culturecommunication.gouv.fr/"><img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/partenaires/MarianneMC.jpg" style="height:80px" /></a>
                 <a href="https://www.citedesartsparis.net/"><img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/partenaires/cite-des-arts.png" style="height:80px" /></a> &nbsp;
                 <a href="http://www.cipac.net/"><img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/partenaires/cipac.jpg" style="height:30px" /></a> &nbsp;
-                <a href="http://www.culturecommunication.gouv.fr/"><img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/partenaires/MarianneMC.jpg" style="height:80px" /></a>
+                
             </div>
         </div>
 

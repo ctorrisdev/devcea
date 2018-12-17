@@ -117,7 +117,7 @@ get_header();
                         <ul tabindex="0" class="orbit-container" style="height: 892.39px;">
 
                             <li class="orbit-slide is-active" aria-live="polite" style="top: 0px; display: block; position: relative; transition-duration: 0s;" data-slide="0">
-                                <div class="slide-text slide_news" style='background: url("<?= get_template_directory_uri(); ?>//images/en_actu.svg") no-repeat center 5em / 400px;'>
+                                <div class="slide-text slide_news" style='background: url("<?= get_template_directory_uri(); ?>/images/en_actu.svg") no-repeat center 5em / 400px;'>
                                     <div class="h2 serif">Young curators invitational – Close-up on the French Contemporary Art Scene</div>
                                     <p>
                                         Dans une perspective de connaissance critique de la scène française, le programme YCI (Young Curators Invitational), créé par la Fondation d’entreprise Ricard et la FIAC en 2006, en collaboration depuis 2011 avec l’Institut français, rassemble à Paris

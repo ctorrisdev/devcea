@@ -100,3 +100,17 @@ function cea_query_vars( $query_vars )
     $query_vars[] = 'groupe_slug';
     return $query_vars;
 }
+
+
+add_action( 'wp', 'bar_management' );
+function bar_management(){
+  $categories = get_post_type();  
+   $user = wp_get_current_user();    
+   if(is_user_logged_in() && (get_post_type()=='creations' || get_field('has_admin_bar')) && (in_array('curator', (array) $user->roles) || in_array('administrator', (array) $user->roles))){
+      
+       show_admin_bar(true);
+   } else {
+       show_admin_bar(false);
+   }
+
+}

@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,900,900i');
 @import url('https://fonts.googleapis.com/css?family=Vollkorn:400,600,600i');
 @font-face {
-	font-family: 'sign';
-	src: url('fonts/SignPainter-HouseScript.woff2') format('woff2'), url('fonts/SignPainter-HouseScript.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'sign';
+    src: url('fonts/SignPainter-HouseBrush.eot');
+    src: url('fonts/SignPainter-HouseBrush.eot?#iefix') format('embedded-opentype'),
+        url('fonts/SignPainter-HouseBrush.woff2') format('woff2'),
+        url('fonts/SignPainter-HouseBrush.woff') format('woff'),
+        url('fonts/SignPainter-HouseBrush.ttf') format('truetype'),
+        url('fonts/SignPainter-HouseBrush.svg#SignPainter-HouseBrush') format('svg');
+    font-weight: 500;
+    font-style: normal;
 }
 
 /*!
@@ -6925,13 +6930,13 @@ legend {
 }
 
 select {
-	height: 2.4375rem;
+	height: auto;
 	margin: 0 0 1rem;
 	padding: .5rem;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	border: 1px solid #000;
+	border: 2px solid #000;
 	border-radius: 0;
 	background-color: #fff;
 	font-family: inherit;
@@ -6956,7 +6961,7 @@ select {
 
 select:focus {
 	outline: 0;
-	border: none
+	border: 2px solid #000
 }
 
 select:disabled {
@@ -8129,7 +8134,8 @@ screen and (min-width:64em) {
 
 .dropdown.menu .is-active>a {
 	background: 0 0;
-	color: #000
+	color: #000;
+	text-decoration: underline
 }
 
 .no-js .dropdown.menu ul {
@@ -9065,7 +9071,8 @@ screen and (min-width:64em) {
 }
 
 .orbit {
-	position: relative
+	position: relative;
+	width:100%
 }
 
 .orbit-container {
@@ -9077,13 +9084,23 @@ screen and (min-width:64em) {
 }
 
 .orbit-slide {
-	width: 100%
+	width: 100%;
+	padding-bottom: 1rem
 }
 
 .orbit-slide.no-motionui.is-active {
 	top: 0;
 	left: 0
 }
+
+.orbit-slides-container{
+    height: 100% !important;
+}
+
+.orbit-container .orbit-slides-container li.active{
+    position:relative;
+}
+
 
 .orbit-figure {
 	margin: 0
@@ -11683,6 +11700,9 @@ screen and (min-width:40em) {
 
 .top-bar .menu a:hover:not(.button) {
 	background-color: transparent;
+}
+
+.top-bar .menu li.is-active a:hover:not(.button) {
 	text-decoration: underline
 }
 
@@ -13802,6 +13822,27 @@ ul.drilldown>li>a {
 .top-bar .menu-flex .menu li:not(:last-child) {
     border-right: none;
 }
+.top-bar .menu-flex ul.menu li.select-lang{
+display: flex;
+align-items: center;
+}
+
+.top-bar .menu-flex ul.menu li.select-lang span{
+    text-transform: uppercase !important;
+    font-family: Montserrat, sans-serif !important;
+    font-weight: 600 !important;
+    padding: 1rem .5rem;
+    float: left;
+    line-height: .65rem
+}
+
+.top-bar .menu-flex ul.menu li.select-lang span a{
+    text-transform: lowercase !important;
+    padding: 0;   
+}
+
+
+
 /*
 #main_menu>div{
 		background-image: url('../images/sous-cea-logo.svg');
@@ -13852,7 +13893,7 @@ p a:not(.button) {
 	padding: 0 !important
 }
 
-p a:hover {
+p a:hover{
 	background: #6CBDFF !important;
 	color: #fff !important;
 }
@@ -13999,32 +14040,32 @@ p a.button:hover {
 
 .bg-zigouigoui {
 	background-color: #ffffff;
-	background: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-zigouigoui.svg) center center;
+	background: url(../images/bg-zigouigoui.svg) center center #fff !important;
 }
 
 .bg-lift {
 	background-color: #ffffff;
-	background: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-lift.svg) center center;
+	background: url(../images/bg-lift.svg) center center #fff !important;
 }
 
 .bg-structurer {
 	background-color: #ffffff;
-	background: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-structurer.svg) center center;
+	background: url(../images/bg-structurer.svg) center center #fff !important;
 }
 
 .bg-informer {
 	background-color: #ffffff;
-	background: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-informer.svg) center center;
+	background: url(../images/bg-informer.svg) center center #fff !important;
 }
 
 .bg-zigzag {
 	background-color: #ffffff;
-	background-image: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-zigzag.svg) !important;
+	background: url(../images/bg-zigzag.svg) center center #fff !important;
 }
 
 .bg-echang {
 	background-color: #ffffff;
-	background-image: url(http://bitumas.com/cea/wp-content/themes/foundationpress_2018-08-22_09-10/images/bg-echanger.svg);
+	background: url(../images/bg-echanger.svg);
 }
 
 .bg-wiggle {
@@ -14428,7 +14469,7 @@ article.post {
 }
 
 .slide-text {
-	padding: 4em;
+	padding: 2em;
 }
 
 .slide-text p {
@@ -14527,11 +14568,14 @@ img.fr-content-element, img.pj-img{
 	background: #fff;
 	list-style-type: none;
 }
-
-.tabs-title>a:focus,
-.tabs-title>a[aria-selected=true] {
+.tabs-title>a {
 	background: #000 !important;
 	color: #fff !important;
+}
+.tabs-title>a:focus,
+.tabs-title>a[aria-selected=true] {
+	background: #fff !important;
+	color: #000 !important;
 }
 
 .filtres-annuaire.tabs{

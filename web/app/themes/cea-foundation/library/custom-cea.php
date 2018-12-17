@@ -4,11 +4,39 @@ add_filter('wp_nav_menu_items', 'add_menu_login', 10, 2);
 
 function add_menu_login($items, $args) {
     if (is_user_logged_in()) {
-        $items .= '<li data-toggle="offCanvas"><a>' . __('mon profil', 'cea') . '</a></li>';
+        $items .= '<li data-toggle="offCanvas"><a>' . __('Mon profil', 'cea') . '</a></li>';
     } else {
         $items .= '<li data-toggle="offCanvas"><a>' . __('Connection', 'cea') . '</a></li>';
     }
     return $items;
+}
+
+function add_wpml_menu_items($items,$args) {
+if (function_exists('icl_get_languages')) {
+$languages = icl_get_languages('skip_missing=0');
+if(1 < count($languages)){
+    $items .= '<li class="menu-item select-lang horizontal">';
+    foreach($languages as $l){
+        if(!$l['active']){
+            $items .='<span><a href="'.$l['url'].'" >'.$l['language_code'].'</a></span>';
+        }
+    else{
+            $items .='<span>'.$l['language_code'].'</span>';
+        }
+}
+$items .= '</li>';
+}
+}
+return $items;
+}
+add_filter( 'wp_nav_menu_items', 'add_wpml_menu_items',10,2 );
+
+
+// filtre de recherche
+add_filter('pre_get_posts','archives_search_filter');
+function archives_search_filter($query) {
+if ($query->is_search)
+$query->set('post_type',array('post'));
 }
 
 // LISTE DES ARTICLES EN BANDEAU
@@ -60,7 +88,7 @@ function slider_post($category, $nbre, $bgcolor, $full = null) {
                         <div class="slide-text <?= $image ? 'hasimage' : 'padding-y'; ?>">                           
                             <?php if (!$full) {
                                 ?><h2 class="serif"><?= $post->post_title; ?></h2><?php
-                                nl2br(the_excerpt());
+                                echo '<p>'.get_the_excerpt().'</p>'; ?><?php
                             } else {
                                 if (!$image)
                                     echo strip_tags(get_the_content(), '<img><h2>');
@@ -69,7 +97,7 @@ function slider_post($category, $nbre, $bgcolor, $full = null) {
                                 }
                             }
                             ?>
-                            <a href="<?= the_permalink($post->ID); ?>" class="button hollow">
+                            <br><a href="<?= the_permalink($post->ID); ?>" class="button hollow">
                                 <?= __('Lire l\'article', 'cea'); ?>
                             </a>
                         </div>
@@ -114,7 +142,7 @@ function the_curators_az() {
     }
 
     function cmp($a, $b) {
-        return strcasecmp($a['name'], $b['name']);
+        return strcasecmp(strtolower($a['name']), strtolower($b['name']));
     }
 
     usort($curators, 'cmp');
@@ -122,7 +150,7 @@ function the_curators_az() {
     $previousalphabet = null;  // initialize the alphabets for to compare with next alphabets for the start.
     $initial_counter = 1;
     foreach ($curators as $curator) {
-        $firstalphabet = substr($curator['name'], 0, 1);
+        $firstalphabet = substr(strtolower($curator['name']), 0, 1);
         if ($previousalphabet !== $firstalphabet) {
             if ($initial_counter != 1) {
                 echo "\t\t\t\t\t\t\t", '</ul>', "\n";

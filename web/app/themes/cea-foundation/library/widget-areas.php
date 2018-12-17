@@ -1,49 +1,62 @@
 <?php
+
 /**
  * Register widget areas
  *
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
+if (!function_exists('foundationpress_sidebar_widgets')) :
 
-if ( ! function_exists( 'foundationpress_sidebar_widgets' ) ) :
-	function foundationpress_sidebar_widgets() {
-		register_sidebar(
-			array(
-				'id'            => 'sidebar-widgets',
-				'name'          => __( 'Sidebar widgets', 'foundationpress' ),
-				'description'   => __( 'Drag widgets to this sidebar container.', 'foundationpress' ),
-				'before_widget' => '<section id="%1$s" class="widget %2$s">',
-				'after_widget'  => '</section>',
-				'before_title'  => '<h6>',
-				'after_title'   => '</h6>',
-			)
-		);
+    function foundationpress_sidebar_widgets() {
+        register_sidebar(
+                array(
+                    'id' => 'sidebar-widgets',
+                    'name' => __('Sidebar widgets', 'foundationpress'),
+                    'description' => __('Drag widgets to this sidebar container.', 'foundationpress'),
+                    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+                    'after_widget' => '</section>',
+                    'before_title' => '<h6>',
+                    'after_title' => '</h6>',
+                )
+        );
 
-		register_sidebar(
-			array(
-				'id'            => 'footer-widgets',
-				'name'          => __( 'Footer widgets', 'foundationpress' ),
-				'description'   => __( 'Drag widgets to this footer container', 'foundationpress' ),
-				'before_widget' => '<section id="%1$s" class="widget %2$s">',
-				'after_widget'  => '</section>',
-				'before_title'  => '<h6>',
-				'after_title'   => '</h6>',
-			)
-		);
-		
-		register_sidebar(
-			array(
-				'id'            => 'archives',
-				'name'          => __( 'archives', 'foundationpress' ),
-				'description'   => __( 'Drag widgets to this archives container', 'foundationpress' ),
-				'before_widget' => '<div id="%1$s" class="archives-widget cell">',
-				'after_widget'  => '</div>',
-				'before_title'  => '<span class="show-for-sr">',
-				'after_title'   => '</span>',
-			)
-		);
-	}
+        register_sidebar(
+                array(
+                    'id' => 'footer-widgets',
+                    'name' => __('Footer widgets', 'foundationpress'),
+                    'description' => __('Drag widgets to this footer container', 'foundationpress'),
+                    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+                    'after_widget' => '</section>',
+                    'before_title' => '<h6>',
+                    'after_title' => '</h6>',
+                )
+        );
 
-	add_action( 'widgets_init', 'foundationpress_sidebar_widgets' );
+        register_sidebar(
+                array(
+                    'id' => 'archives',
+                    'name' => __('archives', 'foundationpress'),
+                    'description' => __('Drag widgets to this archives container', 'foundationpress'),
+                    'before_widget' => '<div id="%1$s" class="archives-widget cell">',
+                    'after_widget' => '</div>',
+                    'before_title' => '<span class="show-for-sr">',
+                    'after_title' => '</span>',
+                )
+        );
+        
+        register_sidebar(
+                array(
+                    'id' => 'pool',
+                    'name' => __('public pool', 'cea'),
+                    'description' => __('Drag widgets to this archives container', 'foundationpress'),
+                    'before_widget' => '<div id="%1$s" class="archives-widget cell">',
+                    'after_widget' => '</div>',
+                    'before_title' => '<span class="show-for-sr">',
+                    'after_title' => '</span>',
+                )
+        );
+    }
+
+    add_action('widgets_init', 'foundationpress_sidebar_widgets');
 endif;

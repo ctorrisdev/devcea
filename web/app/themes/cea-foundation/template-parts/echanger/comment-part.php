@@ -23,7 +23,7 @@
 					</div>
 	
 				<div class="instruct">
-					<?= __('Pour poster une vidéo Youtube, simplement poster l\'URL'); ?>
+					<?= __('*Pour poster une vidéo Youtube, simplement poster l\'URL'); ?>
 				</div>
 
 			<?php endif; ?>

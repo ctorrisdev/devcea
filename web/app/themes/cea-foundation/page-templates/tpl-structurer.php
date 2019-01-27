@@ -4,7 +4,7 @@ Template Name: tpl-structurer
 */
 get_header(); ?>
 
-<?php get_template_part( 'template-parts/article-header' ); ?>
+
 <div class="grid-container full">
 	<div class="grid-x ">
 		<div class="cell medium-4 grid-padding-x grid-padding-y bg-structurer">

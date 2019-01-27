@@ -7,7 +7,8 @@
  */
 
 ?>
+<!-- MENU SMARTPHONE -->
+<nav class=" vertical menu " id="" role="navigation">
 
-<nav class="mobile-menu vertical menu " id="<?php foundationpress_mobile_menu_id(); ?>" role="navigation">
-	<?php foundationpress_mobile_nav(); ?>
+	<?php foundationpress_mobile_nav_drill(); ?>
 </nav>

@@ -6,56 +6,82 @@ function add_menu_login($items, $args) {
     if (is_user_logged_in()) {
         $items .= '<li data-toggle="offCanvas"><a>' . __('Mon profil', 'cea') . '</a></li>';
     } else {
-        $items .= '<li data-toggle="offCanvas"><a>' . __('Connection', 'cea') . '</a></li>';
+        $items .= '<li data-toggle="offCanvas"><a>' . __('Connexion', 'cea') . '</a></li>';
     }
     return $items;
 }
 
-function add_wpml_menu_items($items,$args) {
-if (function_exists('icl_get_languages')) {
-$languages = icl_get_languages('skip_missing=0');
-if(1 < count($languages)){
-    $items .= '<li class="menu-item select-lang horizontal">';
-    foreach($languages as $l){
-        if(!$l['active']){
-            $items .='<span><a href="'.$l['url'].'" >'.$l['language_code'].'</a></span>';
+function add_wpml_menu_items($items, $args) {
+    if (function_exists('icl_get_languages')) {
+        $languages = icl_get_languages('skip_missing=0');
+        if (1 < count($languages)) {
+            $items .= '<li class="menu-item select-lang horizontal">';
+            foreach ($languages as $l) {
+                if (!$l['active']) {
+                    $items .= '<span><a href="' . $l['url'] . '" >' . $l['language_code'] . '</a></span>';
+                } else {
+                    $items .= '<span>' . $l['language_code'] . '</span>';
+                }
+            }
+            $items .= '</li>';
         }
-    else{
-            $items .='<span>'.$l['language_code'].'</span>';
-        }
+    }
+    return $items;
 }
-$items .= '</li>';
-}
-}
-return $items;
-}
-add_filter( 'wp_nav_menu_items', 'add_wpml_menu_items',10,2 );
+
+add_filter('wp_nav_menu_items', 'add_wpml_menu_items', 10, 2);
 
 
 // filtre de recherche
-add_filter('pre_get_posts','archives_search_filter');
+add_filter('pre_get_posts', 'archives_search_filter');
+
 function archives_search_filter($query) {
-if ($query->is_search)
-$query->set('post_type',array('post'));
+    if ($query->is_search)
+        $query->set('post_type', array('post'));
 }
 
 // LISTE DES ARTICLES EN BANDEAU
 if (!function_exists('get_posts_marquee')) {
 
     function get_posts_marquee() {
-        $recent_posts = get_posts(array(
+        /*
+          $recent_posts = get_posts(array(
+          'post_type' => 'post',
+          'posts_per_page' => 5,
+          'category' => '23',
+          'suppress_filters' => false
+          ));
+         */
+        $today = date('Y-m-d');
+        
+         $recent_posts = get_posts(array(
             'post_type' => 'post',
-            'posts_per_page' => 5,
-            'category' => '23',
-            'suppress_filters' => false
+            'posts_per_page' => -1,
+            'meta_query' => array(
+                'relation' => 'AND',
+                array(
+                    'key' => 'debut_diffusion',
+                    'value' => $today,
+                    'compare' => '<='
+                ), array(
+                    'key' => 'fin_diffusion',
+                    'value' => $today,
+                    'compare' => '>='
+                )
+            ),
         ));
+
+        $marquee = '';
+        
+
         foreach ($recent_posts as $recent) {
-            $marquee = '<span class="marquee-space">&nbsp;&nbsp;&mdash;&nbsp;&nbsp;</span>';
+            $marquee .= '<span class="marquee-space">&nbsp;&nbsp;&mdash;&nbsp;&nbsp;</span>';
             $marquee .= '<span>';
             $marquee .= '<a title="' . $recent->post_title . '" class="by-place" href="' . get_permalink($recent->ID) . '" data-id="' . $recent->ID . '">' . $recent->post_title . '</a></span>';
-
-            return $marquee;
         }
+
+
+        return $marquee;
     }
 
 }
@@ -87,8 +113,7 @@ function slider_post($category, $nbre, $bgcolor, $full = null) {
                     <li class="orbit-slide" >
                         <div class="slide-text <?= $image ? 'hasimage' : 'padding-y'; ?>">                           
                             <?php if (!$full) {
-                                ?><h2 class="serif"><?= $post->post_title; ?></h2><?php
-                                echo '<p>'.get_the_excerpt().'</p>'; ?><?php
+                                ?><h2 class="serif"><?= $post->post_title; ?></h2><?php echo '<p>' . get_the_excerpt() . '</p>'; ?><?php
                             } else {
                                 if (!$image)
                                     echo strip_tags(get_the_content(), '<img><h2>');
@@ -97,7 +122,7 @@ function slider_post($category, $nbre, $bgcolor, $full = null) {
                                 }
                             }
                             ?>
-                            <br><a href="<?= the_permalink($post->ID); ?>" class="button hollow">
+                            <br><br><a href="<?= the_permalink($post->ID); ?>" class="button hollow">
                                 <?= __('Lire l\'article', 'cea'); ?>
                             </a>
                         </div>
@@ -118,7 +143,7 @@ function slider_post($category, $nbre, $bgcolor, $full = null) {
             ?>
         </nav>
     </div>
-<?php
+    <?php
 }
 
 // LISTE DES CURATORS PAR ORDRE ALPHABETIQUE
@@ -182,7 +207,7 @@ function the_curators_az() {
                     echo "\t\t\t", '</div>', "\n";
                 }
 
-                // LISTE DES CURATORS PAR ORDRE GEO
+// LISTE DES CURATORS PAR ORDRE GEO
                 function the_curators_geo() {
                     $args = array(
                         'orderby' => 'last_name',

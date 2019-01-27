@@ -46,7 +46,7 @@ if (!$profil) {
                     <h3><?= __('biographie', 'cea'); ?></h3>
                     <br>
                     <p><?= __('Vit et travaille : ', 'cea') . $profil->city . ', ' . $profil->pays; ?></p>
-                    <p><?= $profil->biographie; ?></p>
+                    <p><?= my_content_filter($profil->biographie); ?></p>
                     
                     
                     <hr>

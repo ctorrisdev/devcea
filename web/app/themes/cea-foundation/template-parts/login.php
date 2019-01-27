@@ -1,6 +1,6 @@
 <?php if(!is_user_logged_in()): ?>
 <form method="post" action="<?php echo wp_login_url( get_permalink() ) ?>" id="loginform" name="loginform" class="bg-black grid-container grid-padding-y grid-padding-x padding-y">
-  <h3>connection</h3>
+  <h3><?= __('Connexion','cea'); ?></h3>
   <div class="grid-x grid-padding-x align-bottom">
     <div class="medium-12 cell">
       <label for="user_login"><?= __('Identifiant'); ?></label>

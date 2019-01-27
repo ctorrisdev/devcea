@@ -1,23 +1,13 @@
 
 /* CUSTOM */
-$( "td:has(a)" ).addClass( "a_event" );
 
-$(document).ready(function(){
-    $( "#menu_drag" ).draggable();
-    
-    $("#menu_drag i.la-bars").click(function(){
-        $(".vertical.menu").slideToggle();
-        $(this).toggleClass("la-close");
-        });
-	
 
+
+$( function() {
+    $( "#btn_curator" ).draggable();
   } );
   
-  $(function(){
-  $(window).scroll(function(){
-    $( "#menu_drag" ).addClass( "fixed" );
-  });
-});
+
 
 $(window).on("scroll touchmove", function () {
   $('.logo-c-e-a').toggleClass('tiny', $(document).scrollTop() > 100);

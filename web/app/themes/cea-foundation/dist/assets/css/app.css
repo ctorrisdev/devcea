@@ -12,6 +12,25 @@
     font-style: normal;
 }
 
+.macaron{
+    position: fixed;
+    transform: rotate(-15deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "sign";
+    color: white;
+    bottom: 1.5em;
+    right: 2em;
+    width: 100px;
+    height: 100px;
+    z-index: 100000;
+    background-image: url('../images/macaron.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
 /*!
  *  Line Awesome 1.1.0 by @icons_8 - https://icons8.com/line-awesome
  *  License - https://icons8.com/good-boy-license/ (Font: SIL OFL 1.1, CSS: MIT License)
@@ -7582,6 +7601,15 @@ screen and (min-width:64em) {
     line-height: 1
 }
 
+
+.close-button.close-menu {
+    right: 1rem;
+    top: .5rem;
+    font-size: 2em;
+    line-height: 1;
+	z-index: 10000
+}
+
 .menu {
     padding: 0;
     margin: 0;
@@ -7795,9 +7823,9 @@ screen and (min-width:64em) {
     text-align: center
 }
 
-.menu .is-active>a {
-    background: #6CBDFF;
-    color: #fefefe
+.menu .is-drilldown .is-active>a {
+    background: #6CBDFF !important;
+    color: #fff !important
 }
 
 .menu .active>a {
@@ -7955,7 +7983,7 @@ screen and (min-width:64em) {
 .drilldown a {
     padding: .7rem 1rem;
     background: #fff;
-    color: #6CBDFF !important;
+    
     font-family: "Montserrat"
 }
 
@@ -7973,10 +8001,11 @@ screen and (min-width:64em) {
 
 .drilldown .is-drilldown-submenu.is-active {
     z-index: 1;
-    display: block;
+    display: flex;
     -webkit-transform: translateX(-100%);
     -ms-transform: translateX(-100%);
-    transform: translateX(-100%)
+    transform: translateX(-100%);
+		justify-content: space-around
 }
 
 .drilldown .is-drilldown-submenu.is-closing {
@@ -8015,6 +8044,21 @@ screen and (min-width:64em) {
     border-right-width: 0;
     border-left-style: solid;
     border-color: transparent transparent transparent #6CBDFF !important
+}
+
+.drilldown .is-drilldown-submenu-parent.is-active>a::after {
+    position: absolute;
+    top: 50%;
+    margin-top: -6px;
+    right: 1rem;
+    display: block;
+    width: 0;
+    height: 0;
+    border: inset 6px;
+    content: '';
+    border-right-width: 0;
+    border-left-style: solid;
+    border-color: transparent transparent transparent #fff !important;
 }
 
 .drilldown.align-left .is-drilldown-submenu-parent>a::after {
@@ -8665,16 +8709,17 @@ screen and (min-width:64em) {
     left: 0;
     height: 100%;
     overflow-y: auto;
-    width: 250px;
-    -webkit-transform: translateX(-250px);
-    -ms-transform: translateX(-250px);
-    transform: translateX(-250px)
+    width: 100vw;
+    -webkit-transform: translateX(-100vw);
+    -ms-transform: translateX(-100vw);
+    transform: translateX(-100vw)
 }
 
+
 .off-canvas-content .off-canvas.position-left {
-    -webkit-transform: translateX(-250px);
-    -ms-transform: translateX(-250px);
-    transform: translateX(-250px)
+    -webkit-transform: translateX(-100vw);
+    -ms-transform: translateX(-100vw);
+    transform: translateX(-100vw)
 }
 
 .off-canvas-content .off-canvas.position-left.is-transition-overlap.is-open {
@@ -9982,7 +10027,9 @@ a.thumbnail image {
 
 .title-bar .menu-icon {
     margin-left: .25rem;
-    margin-right: .25rem
+    margin-right: .25rem;
+    margin-top: 1rem;
+	position: absolute;
 }
 
 .title-bar-left,
@@ -13780,9 +13827,12 @@ transform: translate(-50%,-50%);
 }
 
 .drilldown .is-drilldown-submenu {
-    background: #6CBDFF
+    background: #fff
 }
 
+.mobile-menu-cea{
+	height: 80vh; margin-top: 2em; justify-content: space-around
+}
 #menu_drag .drilldown a {
     padding: .7rem 1rem;
     background: #6CBDFF;
@@ -13867,6 +13917,10 @@ ul.drilldown>li>a {
     box-shadow: 0 0 5px rgba(0, 0, 0, .6)
 }
 
+
+.cea-logo-menu{
+text-align: center;
+margin: 1em auto 0}
 @media screen and (mim-width: 40em) and (max-width: 63.9375em) {
     .h2,
     h2 {
@@ -13994,6 +14048,10 @@ p a.button:hover {
     font-family: "Vollkorn", serif;
     font-size: 1.2em;
     font-weight: bold
+}
+
+.footer a:hover {
+text-decoration: underline
 }
 
 .footer ul {
@@ -14226,6 +14284,18 @@ select.bg-black{
         padding-bottom: .625rem !important
     }
 }
+
+@media screen and (min-width: 100em) {
+    .padding-x {
+        padding-left: 2.5rem !important;
+        padding-right: 2.5rem !important
+    }
+    .padding-y {
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important
+    }
+}
+
 
 .blank-bg-1 {
     background-size: initial;

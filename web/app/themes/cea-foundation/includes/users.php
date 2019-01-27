@@ -42,14 +42,24 @@ function cea_clean_roles() {
     );
 
 
-    add_role('admin_cea', __('Admin CEA', 'cea'), array(
-        'read' => true,
-        'edit_posts' => true,
-        'delete_post' => true,
-            )
-    );
-
-
+    add_role('admin_cea', __('Admin CEA', 'cea'), $role);
+    
+    $role = get_role('admin_cea');
+    $role->add_cap('edit_creation');
+    $role->add_cap('edit_creations');
+    $role->add_cap('publish_creations');
+    $role->add_cap('delete_creation');
+    $role->add_cap('edit_posts');
+    $role->add_cap('edit_others_posts');
+    $role->add_cap('edit_published_posts');
+    $role->add_cap('publish_posts');
+    $role->add_cap('read');
+    $role->add_cap('edit_pages');
+    $role->add_cap('edit_others_pages');
+    $role->add_cap('edit_published_pages');
+    $role->add_cap('publish_pages');
+    
+    
     add_role('member', __('Membre actif', 'cea'), array(
         'read' => true,
         'edit_posts' => false,
@@ -80,28 +90,34 @@ function wps_change_role_name() {
 add_action('after_switch_theme', 'wps_change_role_name');
 
 function cea_roles() {
-    // cea_clean_roles();
+    cea_clean_roles();
+   // exit('roles cleaned');
 }
 
-add_action('init', 'cea_roles');
+//add_action('init', 'cea_roles');
 
 
 add_action('admin_init', 'my_remove_menu_pages');
 
 function my_remove_menu_pages() {
-    if (current_user_can('curator')) {
+    if (!current_user_can('administrator')) {
         remove_menu_page('tools.php'); // Tools
         remove_menu_page('users.php'); // Users
         remove_submenu_page('index.php', 'update-core.php'); // Dashboard - Updates
         remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=post_tag'); // Posts - Tags 
         remove_submenu_page('themes.php', 'theme-editor.php'); // Appearance - Editor
-        remove_submenu_page('plugins.php', 'plugin-editor.php'); // Plugins - Editor
-        remove_menu_page('edit.php');
-        remove_menu_page('page.php');
+        remove_submenu_page('plugins.php', 'plugin-editor.php'); // Plugins - Editor       
         remove_menu_page('wpcf7');
+        remove_menu_page('edit.php?post_type=project');
         remove_menu_page('edit.php?post_type=wall');
         remove_menu_page('edit.php?post_type=groupes');
     }
+
+    if (!current_user_can('administrator') && !current_user_can('admin_cea')) {
+        remove_menu_page('edit.php');
+        remove_menu_page('edit.php?post_type=page');
+    }
+
     remove_menu_page('edit-comments.php');
 }
 
@@ -115,6 +131,7 @@ function wpb_show_current_user_attachments($query) {
     return $query;
 }
 
+
 add_action('wp_ajax_conversion_annuaire', 'conversion_annuaire');
 add_action('wp_ajax_nopriv_conversion_annuaire', 'conversion_annuaire');
 
@@ -123,7 +140,7 @@ function conversion_annuaire() {
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
     cea_clean_roles();
-    
+
     $posts_array = array(
         'posts_per_page' => -1,
         'post_type' => 'post',
@@ -131,8 +148,8 @@ function conversion_annuaire() {
     );
     $membs = get_posts($posts_array);
     foreach ($membs as $mb) {
-        
-        
+
+
         echo '<hr>' . $mb->post_title . '</br>';
         $name = explode(' ', $mb->post_title);
         $prenom = $name[sizeof($name) - 1];
@@ -156,7 +173,7 @@ function conversion_annuaire() {
                 wp_update_user(array('ID' => $newman->id, 'first_name' => $prenom, 'last_name' => $nom));
             }
         }
-        wp_delete_post( $mb->ID);
+        wp_delete_post($mb->ID);
     }
 
     die('done');

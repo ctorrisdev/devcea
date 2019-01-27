@@ -115,9 +115,9 @@ jQuery(document).ready(function ($) {
                     files_for_this_post = [];
                     var ceadrop = Dropzone.forElement("#ceadrop");
                     ceadrop.removeAllFiles();
-                    if(typecom =='sub'){
+                    if (typecom == 'sub') {
                         $('.' + responsediv).before(response);
-                    }else {
+                    } else {
                         $('.' + responsediv).after(response);
                     }
                 }
@@ -239,17 +239,39 @@ jQuery(document).ready(function ($) {
                 }
         );
     });
-    
-    $('.modifprof').click(function(){
+
+    $('.modifprof').click(function () {
         $('.off-canvas').find('.close-button').trigger('click');
     });
-    
-    if(jQuery('#show_edit_profil').val()){
+
+    if (jQuery('#show_edit_profil').val()) {
         console.log('oui');
-        setTimeout(function(){
+        setTimeout(function () {
             $('#opentrigger').trigger('click');
-        },1000);
-        
+        }, 1000);
+
     }
-    
+
+    $('.mytrash').click(function () {
+        var txt;
+        var r = confirm($('.trashmessage').html());
+        if (r == true) {
+            var id = $(this).data('id');
+             $('#macreation'+id).remove();
+            $.post(
+                    ajaxurl,
+                    {
+                        'action': 'delete_creation',
+                        'id': id,
+                    },
+                    function (response) {
+                        console.log(response);
+                       
+                    }
+            );
+        } else {
+
+        }
+    });
+
 });

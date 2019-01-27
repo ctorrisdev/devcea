@@ -12,7 +12,7 @@
                 <li><a href="<?= get_home_url(); ?>/decouvrir/archives/">archives</a></li>
             </ul>
         </li>
-        <li><a href="<?= get_home_url(); ?>/echanger/">&eacutechanger</a></li>
+        <li><a href="<?= get_home_url(); ?>/echanger/">&eacute;changer</a></li>
         <li><a href="<?= get_home_url(); ?>/curater/">curater</a></li>
         <li>
             <a href="#e">S'informer</a>

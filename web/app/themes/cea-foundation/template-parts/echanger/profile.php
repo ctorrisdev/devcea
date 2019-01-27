@@ -54,11 +54,15 @@ if (is_user_logged_in() && $cea_user->id) {
             <?php if(in_array('curator', (array) $user->roles) || in_array('administrator', (array) $user->roles)) : ?>
             <div class="cell large-10">
 							<h5><small><i class="la la-2x la-clipboard"></i></small></h5>
-              <h5><?php _e('Mes Curations', 'cea'); ?></h5>
+              <h5><?php _e('Mes Projets', 'cea'); ?></h5>
                 <ul class="no-bullet group-list">
                     <?php $mesposts = $cea_user->get_all_curations(); ?>
                     <?php foreach ($mesposts as $art) {
-                        ?><li><a href="<?= get_the_permalink($art->ID); ?>"><?= $art->post_title; ?></a></li><?php
+                        ?><li class="clearfix" id="macreation<?= $art->ID; ?>"><span class="float-left">
+                                <a href="<?= get_the_permalink($art->ID); ?>"><?= $art->post_title; ?></a></span>
+                            <span class="float-right"><a href="<?= get_the_permalink($art->ID); ?>?et_fb=1"><i class="la la-lg la-pencil"></i></a>&nbsp;
+                                <a href="#"<i class="la la-lg la-trash mytrash" data-id="<?= $art->ID; ?>"></i></a></span>
+                        </li><?php
                     }
                     wp_reset_postdata();
                     ?>
@@ -99,3 +103,5 @@ if (is_user_logged_in() && $cea_user->id) {
 }
 wp_reset_postdata();
 ?>
+<div class="hidden trashmessage"><?= __('Etes vous sur de vouloir effacer définitivement cette création ?','cea'); ?></div>
+

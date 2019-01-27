@@ -68,3 +68,7 @@ if (empty($_GET['et_fb'])):
     require_once( 'includes/functions-wall.php' );
 endif;
 
+
+function my_content_filter($content){
+    return(preg_replace('/<a /','<a target="_blank" ',make_clickable(apply_filters('the_content', $content))));
+}

@@ -26,8 +26,9 @@ if ($groupename) {
 $user = wp_get_current_user();
 $cea_user = new cea_user($user->ID);
 ?>
-<?php get_template_part( 'template-parts/article-header' ); ?>
+
 <?php while (have_posts()) : the_post(); ?>
+
 
     <div class="grid-container full">
 
@@ -38,7 +39,7 @@ $cea_user = new cea_user($user->ID);
                 <form id="groupsearch">
                     <div class="input-group expanded-grid">
                         <span class="input-group-label"><i class="la la-lg la-search"></i></span>
-                        <input class="input-group-field" type="text" placeholder="<?= __('Rechercher un groupe', 'cea'); ?>">
+                        <input class="input-group-field" type="text" placeholder="<?= __('Rechercher une discussion', 'cea'); ?>">
                     </div>
                 </form>
                 <div class="grid-container">
@@ -50,7 +51,7 @@ $cea_user = new cea_user($user->ID);
                         <!-- formulaire recherche groupe -->
                         <div class="cell bg-blanc border-bottom">
 
-                            <h3><?= __('Liste des groupes', 'cea'); ?></h3>
+                            <h3><?= __('Discussions', 'cea'); ?></h3>
                             <div id="liste_groupes">
                                 <ul class="no-bullet text-center group-list">
                                     <?= get_groupes_list(); ?>
@@ -60,7 +61,7 @@ $cea_user = new cea_user($user->ID);
                             if (in_array('curator', (array) $user->roles) || in_array('administrator', (array) $user->roles) || in_array('admin_cea', (array) $user->roles)) :
                                 ?>
                                 <a class="button hollow expanded" data-open="add_group_form">
-                                <?= __('Créer un nouveau groupe', 'cea'); ?>
+                                <?= __('Créer une discussion', 'cea'); ?>
                                 </a>
                                 <?php endif; ?>
 
@@ -121,6 +122,59 @@ $cea_user = new cea_user($user->ID);
 
             <!-- WALL -->
             <div class="cell medium-8 border-left bg-twin">
+            
+            <div class="grid-container full">
+	<div class="grid-x grid-padding-x grid-padding-y border-bottom text-center">
+		    <?php
+    if ($groupeid) {
+        $group = get_post($groupeid);
+        ?>
+                            <div class="cell bg-black">
+                                <h3><?= $group->post_title; ?></h3>
+                                &mdash;
+                                <p><?= $group->description; ?></p>
+                                    <?php if (is_user_logged_in() && $cea_user): ?>
+                                    <?php if (!$cea_user->is_in_group($groupeid)) : ?>
+                                        <a href="?act=join&groupe=<?= $groupeid; ?>" class="button" title="Rejoindre">
+                                        <?php _e('rejoindre le groupe', 'cea'); ?>
+                                        </a>
+                                        <?php else : ?>
+                                        <a href="?act=quit&groupe=<?= $groupeid; ?>" class="button">
+                                        <?php _e('quitter le groupe', 'cea'); ?>
+                                        </a>
+                                        <?php endif; ?>
+                                <?php endif; ?>
+                                
+                                <?php if ($groupeid) { ?>
+                            <div class="cell bg-black">
+                                <i class="la la-3x la-users"></i>
+                                <h5>
+        <?php _e('membres', 'cea'); ?>
+                                </h5>
+                                <p>
+        <?php $members = get_users_from_group($groupeid); ?>
+                                    <?php
+                                    if ($members) :
+                                        foreach ($members as $member) {
+                                            ?>
+                                            <a href="/members/<?= $member->user_login; ?>"><?= $member->display_name; ?></a>&nbsp;
+                                            <?php
+                                        }
+                                    endif;
+                                    ?>
+                                    </p>
+                            </div>
+                        <?php } ?>
+                        
+                        
+
+                            </div>
+    <?php } ?>
+	</div>
+</div>
+
+
+
                 <?php
                 set_query_var('groupeid', $groupeid);
                 get_template_part('template-parts/echanger/comment-part', "groupeid");
@@ -130,7 +184,7 @@ $cea_user = new cea_user($user->ID);
     </div>
 
     <div class="reveal" id="add_group_form" data-reveal>
-        <h3>Création d'un nouveau groupe</h3>
+        <h3><?= __('Création d\'un nouveau groupe','cea'); ?></h3>
         <?php display_wall_add_group_form(); ?>
         <button class="close-button" data-close aria-label="Close modal" type="button">
             <span aria-hidden="true">&times;</span>

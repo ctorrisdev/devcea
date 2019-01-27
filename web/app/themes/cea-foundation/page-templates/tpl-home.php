@@ -31,7 +31,7 @@ get_header();
 
         </div>
     </div>
-
+<div id="btn_curator" class="macaron"><span><?= __('Plateforme curatoriale','cea'); ?></span></div>
     <?php
 endwhile;
 

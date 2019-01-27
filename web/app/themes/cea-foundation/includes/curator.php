@@ -55,3 +55,14 @@ function display_shortcode_curator_page() {
     return($form);
 }
 
+
+
+
+
+add_action('wp_ajax_delete_creation', 'delete_creation');
+add_action('wp_ajax_nopriv_delete_creation', 'delete_creation');
+function delete_creation(){
+    $id = intval($_POST['id']);
+    var_dump(wp_delete_post($id));
+    wp_die();
+}

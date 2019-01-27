@@ -34,22 +34,9 @@
         <?php endif; ?>
 
         <?php //get_template_part( 'template-parts/menu_drag' );  ?>
-        <header class="site-header" role="banner">
-            <div class="site-title-bar title-bar" <?php foundationpress_title_bar_responsive_toggle(); ?>>
-                <div class="title-bar-left  text-center">
-                    <button aria-label="<?php _e('Main Menu', 'foundationpress'); ?>" class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
-                    <span class="site-mobile-title title-bar-title">
-                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-                            <img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/cea-logo.svg" style="height:50px" class="cea-logo"/>
-                        </a>
-                    </span>
-                </div>
-            </div>
 
-            <?php
 
-            get_template_part('template-parts/menu2');
-            ?>
+            <?php get_template_part('template-parts/menu'); ?>
             <?php get_template_part('template-parts/profil-offcanvas'); ?>
         
 

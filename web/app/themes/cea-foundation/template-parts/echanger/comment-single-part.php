@@ -14,7 +14,7 @@ $json = get_field('fichiers', $com->ID);
             </div>
         <?php endif; ?>
     </div>
-    <div id="post-<?= $com->ID; ?>"><?= make_clickable(apply_filters('the_content', $com->post_content)); ?></div>
+    <div id="post-<?= $com->ID; ?>"><?= my_content_filter($com->post_content); ?></div>
     <div class="hidden" id="edit-post-<?= $com->ID; ?>"><?= $com->post_content; ?></div>
     <div class="hidden" id="edit-galery-<?= $com->ID; ?>"><?= $json; ?></div>
 

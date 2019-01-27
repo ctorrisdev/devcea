@@ -452,3 +452,10 @@
 #wp-admin-bar-et-disable-visual-builder{
     display:block !important;
 }
+
+.attachments-browser .media-toolbar{
+    display:none;
+}
+.media-modal-close .screen-reader-text{
+    display:none;
+}

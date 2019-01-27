@@ -4,7 +4,7 @@ Template Name: pleine page avec marge
 */
 get_header(); ?>
 
-<?php get_template_part( 'template-parts/article-header' ); ?>
+
 
 <div class="grid-container full">
 	<div class="grid-x grid-padding-x grid-padding-y">
